@@ -18,7 +18,7 @@ Logger.prototype.info = function(log) {
 }
 
 Logger.prototype.debug = function(log) {
-    if (env.logLevel == 'info' || env.logLevel == 'info') {
+    if (env.logLevel == 'debug' || env.logLevel == 'info') {
         console.log(log)
     }
 }
