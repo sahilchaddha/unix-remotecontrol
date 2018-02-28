@@ -8,6 +8,13 @@ Runs Scripts on Mac/Linux remotely.
 
 ## Installation :
 
+### Via Git :
+```
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-RemoteControl
+ $ npm install
+ $ npm start
+```
+
 ## Configuration :
 
 ## Usage :
