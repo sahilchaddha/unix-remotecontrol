@@ -8,4 +8,4 @@ var logger = require('./Utilities/logger.js')
 //Add Routes to app
 routerService.addRoutes(app, routes)
 
-app.listen(env.port, () => logger.log('Mac Remote Control Server Running at localhost:' + env.port + '. \nSession Token = ' + sessionService.sessionToken))
+app.listen(env.port, () => logger.log('Remote Control Server Running at localhost:' + env.port + '. \nSession Token = ' + sessionService.sessionToken))
