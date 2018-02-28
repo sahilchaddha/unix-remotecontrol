@@ -46,7 +46,7 @@ $ npm start
 
 ## Configuration :
 
-Configuration containing sudo password, port number, logLevel & sessionToken are stored in `environment.js` in root.
+Configuration containing sudo password, port number, logLevel & sessionToken are stored in `environment.js` in root/src.
 
 Sample Configuration :
 
@@ -72,9 +72,9 @@ module.exports = env
 | logLevel           | Log Level (debug, info, error)                        |
 | sessionToken       | Random Session Token for API Authentication.          |
 
-`
-Note:- sessionToken needs to be set as Request Header "token"
-`
+
+**NOTE**: `sessionToken` needs to be set as Request Header `token`
+
 
 ## Usage :
 
@@ -98,8 +98,23 @@ curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" localhost:3000/music/
 
 ## Sample Scripts/Commands : 
 
-### Power Command Type
+### Power Command Type 
 
+Usage:- 
+
+`localhost:3000/power/displaySleep`
+
+`localhost:3000/power/restart?time=10`
+
+| Command             | Description                                           | Query Params | Sudo |
+|--------------------|-------------------------------------------------------|----------| ----- |
+| /ping      | Pings to get server state (on/off)         | None       | false |
+| /halt           | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
+| /shutdown               | Shut downs the system                                 | `time` : Delays Shutdown in minutes       | true |
+| /restart           | Restarts the system | `time` : Delays Shutdown in minutes      | true |
+| /logout         | Logs Out the user                                  | None      | false |
+| /sleep         | Turns the System to Sleep                       | None       | false |
+| /displaySleep        | Turns the Display to Sleep                      | None       | false |
 
 
 ## Writing Custom Scripts :
@@ -108,27 +123,3 @@ curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" localhost:3000/music/
 
 ### Running Forever on Rasberry Pi
 
-/shutdown?time=10
-/restart
-/halt
-/logout
-/sleep
-/displaySleep
-/ping
-
-
-| Fields             | Description                                           | Required |
-|--------------------|-------------------------------------------------------|----------|
-| platform           | Must always be `cmdSwitch2`.                          | Yes      |
-| name               | For logging purposes.                                 | No       |
-| switches           | Array of switch config (multiple switches supported). | Yes      |
-| \|- name\*         | Name of your device.                                  | Yes      |
-| \|- on_cmd         | Command to turn on your device.                       | No       |
-| \|- off_cmd        | Command to turn off your device.                      | No       |
-| \|- state_cmd      | Command to detect an ON state of your device.         | No       |
-| \|- polling        | State polling (Default false).                        | No       |
-| \|- interval       | Polling interval in `s` (Default 1s).                 | No       |
-| \|- timeout\*\*    | Commands execution timeout in `s` (Default 1s).       | No       |
-| \|- manufacturer   | Manufacturer of your device.                          | No       |
-| \|- model          | Model of your device.                                 | No       |
-| \|- serial         | Serial number of your device.                         | No       |
