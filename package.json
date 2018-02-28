@@ -24,6 +24,7 @@
   "homepage": "https://github.com/sahilchaddha/mac-RemoteControl#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "sudo-js": "^1.0.2",
     "uuid": "^3.2.1"
   }
 }
