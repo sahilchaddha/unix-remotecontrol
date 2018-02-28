@@ -2,8 +2,23 @@
 
 Runs Scripts on Mac/Linux remotely.
 
-### How it Works
+### Why :
 
+### How it Works :
+
+## Installation :
+
+## Configuration :
+
+## Usage :
+
+## Available Scripts/Commands : 
+
+## Creating Custom Scripts :
+
+## Homebridge :
+
+### Running Forever on Rasberry Pi :
 
 
 
