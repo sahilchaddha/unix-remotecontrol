@@ -1,6 +1,6 @@
 var env = {
     port: '3000',
-    pass: 'lol',
+    pass: 'uncharted',
     logLevel: 'info',
     sessionToken: 'abcd'
 }

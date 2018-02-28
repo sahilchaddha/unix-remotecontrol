@@ -24,6 +24,10 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
     logger.debug('*********\nExecuting Command\nSudo: '+executableCommand.sudo + ' \nCommand Type : ' + commandType
      + '\nCommand Key : ' + commandKey + '\nCommand : ' + executableCommand.command + '\n*********')
 
+    if (params == null) {
+        params = []
+    }
+
     var commandToExecute = executableCommand.command.concat(params)
 
     if (executableCommand.sudo) {
