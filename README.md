@@ -46,7 +46,7 @@ $ npm start
 
 ## Configuration :
 
-Configuration containing sudo password, port number, logLevel & sessionToken are stored in environment.js in root.
+Configuration containing sudo password, port number, logLevel & sessionToken are stored in `environment.js` in root.
 
 Sample Configuration :
 
@@ -66,11 +66,11 @@ module.exports = env
 
 
 | Fields             | Description                                           |
-|--------------------|-------------------------------------------------------|----------|
-| port           | Port Number to run HTTP Server.                          |
-| pass               | System Sudo Password                                 |
-| logLevel           | Log Level (debug, info, error) |
-| sessionToken         | Random Session Token for API Authentication.                                   |
+|--------------------|-------------------------------------------------------|
+| port               | Port Number to run HTTP Server.                       |
+| pass               | System Sudo Password                                  |
+| logLevel           | Log Level (debug, info, error)                        |
+| sessionToken       | Random Session Token for API Authentication.          |
 
 `
 Note:- sessionToken needs to be set as Request Header "token"
