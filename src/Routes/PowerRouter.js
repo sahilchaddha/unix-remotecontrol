@@ -1,12 +1,8 @@
 var router = require('../Services/RouterService').router
 
-// define the home page route
+// define the home page route => /power
 router.get('/', function (req, res) {
-  res.send('Birds home page')
-})
-// define the about route
-router.get('/about', function (req, res) {
-  res.send('About birds')
+  res.send('Power Router')
 })
 
 module.exports = router
