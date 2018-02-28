@@ -17,7 +17,9 @@
     "control",
     "macos",
     "linux",
-    "remotecontrol"
+    "remotecontrol",
+    "iot",
+    "rasberrypi"
   ],
   "author": "Sahil Chaddha",
   "license": "ISC",
