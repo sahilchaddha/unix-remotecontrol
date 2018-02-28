@@ -8,20 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sahilchaddha/mac-RemoteControl.git"
+    "url": "git+https://github.com/sahilchaddha/unix-remoteControl.git"
   },
   "keywords": [
     "mac",
     "remote",
     "control",
-    "macos"
+    "macos",
+    "linux",
+    "remotecontrol"
   ],
   "author": "Sahil Chaddha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sahilchaddha/mac-RemoteControl/issues"
+    "url": "https://github.com/sahilchaddha/unix-remoteControl/issues"
   },
-  "homepage": "https://github.com/sahilchaddha/mac-RemoteControl#readme",
+  "homepage": "https://github.com/sahilchaddha/unix-remoteControl#readme",
   "dependencies": {
     "express": "^4.16.2",
     "sudo-js": "^1.0.2"
