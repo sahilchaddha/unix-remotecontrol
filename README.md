@@ -119,6 +119,8 @@ Usage:-
 
 ## Writing Custom Scripts :
 
+### Apple Scripts
+
 ## Homebridge :
 
 ### Running Forever on Rasberry Pi
