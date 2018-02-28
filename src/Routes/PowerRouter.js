@@ -49,4 +49,8 @@ router.get('/displaySleep', function (req, res) {
   res.status(200).send('Display Sleeping')
 })
 
+router.get('/ping', function (req, res) {
+  res.status(200).send('Pong')
+})
+
 module.exports = router

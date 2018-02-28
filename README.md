@@ -1,4 +1,4 @@
-# Unix Remote Control
+# Unix Remote Control (WIP
 
 Runs Scripts on Mac/Linux remotely.
 
@@ -28,6 +28,9 @@ Runs Scripts on Mac/Linux remotely.
 
 ### Running Forever on Rasberry Pi :
 
+
+sockets
+
 npm install -g forever
 forever start src/server.js
 
@@ -47,6 +50,7 @@ Session Token = f64f2940-fae4-11e7-8c5f-ef356f279131
 /sleep
 
 /displaySleep
+/ping
 
 
 var env = {
