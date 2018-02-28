@@ -1,0 +1,28 @@
+{
+  "name": "mac-remotecontrol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahilchaddha/mac-RemoteControl.git"
+  },
+  "keywords": [
+    "mac",
+    "remote",
+    "control",
+    "macos"
+  ],
+  "author": "Sahil Chaddha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahilchaddha/mac-RemoteControl/issues"
+  },
+  "homepage": "https://github.com/sahilchaddha/mac-RemoteControl#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
