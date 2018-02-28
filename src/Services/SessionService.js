@@ -1,7 +1,7 @@
-var uuidv1 = require('uuid/v1')
+var env = require('../environment.js')
 
 function SessionService() {
-    this.sessionToken = uuidv1()
+    this.sessionToken = env.sessionToken
 }
 
 SessionService.prototype.authenticate = function(sessionToken) {
