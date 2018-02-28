@@ -1,4 +1,4 @@
-# Unix Remote Control (WIP
+# Unix Remote Control (IoT)
 
 Runs Scripts on Mac/Linux remotely.
 
