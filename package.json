@@ -1,5 +1,5 @@
 {
-  "name": "unix-remoteControl",
+  "name": "unix-remotecontrol",
   "version": "0.1.0",
   "description": "",
   "main": "src/server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sahilchaddha/unix-remoteControl.git"
+    "url": "git+https://github.com/sahilchaddha/unix-remotecontrol.git"
   },
   "keywords": [
     "mac",
@@ -24,9 +24,9 @@
   "author": "Sahil Chaddha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sahilchaddha/unix-remoteControl/issues"
+    "url": "https://github.com/sahilchaddha/unix-remotecontrol/issues"
   },
-  "homepage": "https://github.com/sahilchaddha/unix-remoteControl#readme",
+  "homepage": "https://github.com/sahilchaddha/unix-remotecontrol#readme",
   "dependencies": {
     "express": "^4.16.2",
     "sudo-js": "^1.0.2"

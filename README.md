@@ -27,7 +27,7 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 ## Installation :
 
 ```
- $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-RemoteControl
+ $ git clone https://github.com/sahilchaddha/unix-remotecontrol.git && cd unix-remotecontrol
  $ npm install
 ```
 
