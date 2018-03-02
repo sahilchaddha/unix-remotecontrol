@@ -1,6 +1,7 @@
 var powerRouter = require('./Routes/PowerRouter.js')
 var systemStatsRouter = require('./Routes/SystemStatsRouter.js')
 var browserRouter = require('./Routes/BrowserRouter.js')
+var systemSpyRouter = require('./Routes/SystemSpyRouter.js')
 
 var routes = [
     {
@@ -14,6 +15,10 @@ var routes = [
     { 
     	url: '/browser',
     	routerClass: browserRouter
+    },
+    {
+        url: '/systemSpy',
+    	routerClass: systemSpyRouter
     }
 ]
 

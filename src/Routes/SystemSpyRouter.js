@@ -1,4 +1,13 @@
 var router = require('../Services/RouterService').router
+var fs = require('fs')
+var path = require('path')
+var commandService = require('../Services/CommandService.js')
+var imagesnapjs = require('imagesnapjs');
+
+
+const homeDir = require('os').homedir();
+const screenShotDirectory = 'Screenshots_remotecontrol'
+const imagesDirectory = path.join(homeDir, screenShotDirectory)
 
 // define the home page route => /systemSpy
 router.get('/', function (req, res) {
@@ -6,7 +15,25 @@ router.get('/', function (req, res) {
 })
 
 router.post('/screenshot', function (req, res) {
-    
+
+    if (!fs.existsSync(imagesDirectory)){
+        fs.mkdirSync(imagesDirectory);
+    }
+
+    var imageFilePath = homeDir + '/' + screenShotDirectory + '/' + Date.now().toString() + '.jpg'
+    var options = [imageFilePath]
+
+  commandService.execute('spyCommands', 'screenshot', options, function(){
+      res.status(200).sendFile(imageFilePath)
+  })
+})
+
+router.post('/webcamCapture', function (req, res) {
+    var imageFilePath = homeDir + '/' + screenShotDirectory + '/' + Date.now().toString() + '.jpg'
+
+    imagesnapjs.capture(imageFilePath, { cliflags: '-w 2'}, function(err) {
+        res.status(200).sendFile(imageFilePath)
+      });
 })
 
 router.post('/screenRecord', function (req, res) {

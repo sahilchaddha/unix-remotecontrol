@@ -153,11 +153,12 @@ Usage:-
 
 | Command             | Method | Description                                           | Query Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
-| /screenshot      | POST | Screenshots Current Screen, Saves & returns image         | None       | false |
+| /screenshot      | POST | Screenshots Current Screen, Saves & returns image (OSX Only)         | None       | false |
+| /webcamCapture      | POST | Clicks Camera Still, Saves & returns image (OSX Only)         | None       | false |
 | /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | None      | false |
 | /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | None       | false |
 | /alert           | POST | Shows Alert to User | None      | false |
-| /isRecording         | GET | Returns Recording Status                                  | `type` : `screen` or `cam` type of recording      | false |
+| /isRecording         | GET | Returns Recording Status (OSX Only)                                  | `type` : `screen` or `cam` type of recording      | false |
 
 
 ### Todo Scripts :
