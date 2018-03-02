@@ -142,6 +142,9 @@ Usage:-
 | Command             | Method | Description                                           | Query Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /googleChromeReset      | POST | Clear all data of google chrome and reset         | None       | false |
+| /safariClearHistory      | POST | Clear histroy of safari        | None       | false |
+
+Note:- For safariClearHistory you will have to add terminal or whatever command line tool you are using should be added in System Preferences -> Security & Privacy -> Privacy -> Accessibility. When you will run this command first time there will a promt to add command line tool in Accessibility.
 
 ### System Spy Command Type 
 
@@ -166,7 +169,7 @@ Usage:-
 - [X] Temperature & System Stats
 - [X] Reset Google Chrome
 - [ ] Reset Firefox
-- [ ] Reset Safari
+- [X] Reset Safari
 - [ ] Music Playback (iTunes & Youtube)
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
 
