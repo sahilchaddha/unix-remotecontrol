@@ -25,6 +25,13 @@ var powerCommands = {
     }
 }
 
+var browserCommands = {
+    googleChromeReset : {
+        command: ['osascript', 'src/Commands/AppleScripts/browser_googlechrome_reset.scpt']
+    }
+}
+
 module.exports = {
-    power: powerCommands
+    power: powerCommands,
+    browser: browserCommands
 }
