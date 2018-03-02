@@ -1,4 +1,5 @@
 var router = require('../Services/RouterService').router
+const si = require('systeminformation');
 
 // define the home page route => /systemStats
 router.get('/', function (req, res) {
@@ -6,27 +7,33 @@ router.get('/', function (req, res) {
 })
 
 router.get('/temperature', function (req, res) {
-  res.status(200).send({responseMessage: "Shutting Down"})
+    si.cpuTemperature(function(data) {
+        res.status(200).send({responseMessage: "CPU Temperature", resonse: data})
+    })
 })
 
-router.get('/cpu', function (req, res) {
-    res.status(200).send({responseMessage: "Shutting Down"})
+router.get('/cpuLoad', function (req, res) {
+    si.currentLoad(function(data) {
+        res.status(200).send({responseMessage: "CPU Stats", resonse: data})
+    })
 })
 
 router.get('/ram', function (req, res) {
-    res.status(200).send({responseMessage: "Shutting Down"})
+    si.mem(function(data) {
+        res.status(200).send({responseMessage: "Ram Stats", resonse: data})
+    })
 })
 
 router.get('/storage', function (req, res) {
-    res.status(200).send({responseMessage: "Shutting Down"})
-})
-
-router.get('/cpu', function (req, res) {
-    res.status(200).send({responseMessage: "Shutting Down"})
+    si.fsSize(function(data) {
+        res.status(200).send({responseMessage: "Storage Stats", resonse: data})
+    })
 })
 
 router.get('/battery', function (req, res) {
-    res.status(200).send({responseMessage: "Shutting Down"})
+    si.battery(function(data) {
+        res.status(200).send({responseMessage: "Battery Stats", resonse: data})
+    })
 })
 
 
