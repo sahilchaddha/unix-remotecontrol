@@ -106,15 +106,15 @@ Usage:-
 
 `localhost:3000/power/restart?time=10`
 
-| Command             | Description                                           | Query Params | Sudo |
-|--------------------|-------------------------------------------------------|----------| ----- |
-| /ping      | Pings to get server state (on/off)         | None       | false |
-| /halt           | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
-| /shutdown               | Shut downs the system                                 | `time` : Delays Shutdown in minutes       | true |
-| /restart           | Restarts the system | `time` : Delays Shutdown in minutes      | true |
-| /logout         | Logs Out the user                                  | None      | false |
-| /sleep         | Turns the System to Sleep                       | None       | false |
-| /displaySleep        | Turns the Display to Sleep                      | None       | false |
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /ping      | GET | Pings to get server state (on/off)         | None       | false |
+| /halt           | POST | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
+| /shutdown              | POST | Shut downs the system                                 | `time` : Delays Shutdown in minutes       | true |
+| /restart           | POST | Restarts the system | `time` : Delays Shutdown in minutes      | true |
+| /logout         | POST | Logs Out the user                                  | None      | false |
+| /sleep         | POST | Turns the System to Sleep                       | None       | false |
+| /displaySleep        | POST | Turns the Display to Sleep                      | None       | false |
 
 
 ### System Stats Command Type 
@@ -125,13 +125,13 @@ Usage:-
 
 `localhost:3000/systemStats/ram`
 
-| Command             | Description                                           | Query Params | Sudo |
-|--------------------|-------------------------------------------------------|----------| ----- |
-| /temperature      | Returns current Temperature of CPU         | None       | false |
-| /cpuLoad           | Returns current CPU Load                          | None      | false |
-| /ram               | Returns current Ram Status                                 | None       | false |
-| /storage           | Returns current Storage Stats | None      | false |
-| /battery         | Returns current Battery Information                                  | None      | false |
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /temperature      | GET | Returns current Temperature of CPU         | None       | false |
+| /cpuLoad           | GET | Returns current CPU Load                          | None      | false |
+| /ram               | GET | Returns current Ram Status                                 | None       | false |
+| /storage           | GET | Returns current Storage Stats | None      | false |
+| /battery         | GET | Returns current Battery Information                                  | None      | false |
 
 ### Browser Command Type 
 

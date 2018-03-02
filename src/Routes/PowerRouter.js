@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
   res.send('Power Router')
 })
 
-router.get('/shutdown', function (req, res) {
+router.post('/shutdown', function (req, res) {
   var options = []
   if (req.query.time != null) {
     options.push('+'+req.query.time)
@@ -18,7 +18,7 @@ router.get('/shutdown', function (req, res) {
   res.status(200).send({responseMessage: "Shutting Down"})
 })
 
-router.get('/restart', function (req, res) {
+router.post('/restart', function (req, res) {
   var options = []
   if (req.query.time != null) {
     options.push('+'+req.query.time)
@@ -29,22 +29,22 @@ router.get('/restart', function (req, res) {
   res.status(200).send({responseMessage: "Restarting"})
 })
 
-router.get('/halt', function (req, res) {
+router.post('/halt', function (req, res) {
   commandService.execute('power', 'halt', null, function() {})
   res.status(200).send({responseMessage: "System Halt"})
 })
 
-router.get('/logout', function (req, res) {
+router.post('/logout', function (req, res) {
   commandService.execute('power', 'logout', null, function() {})
   res.status(200).send({responseMessage: "Logging out in 60 secs"})
 })
 
-router.get('/sleep', function (req, res) {
+router.post('/sleep', function (req, res) {
   commandService.execute('power', 'sleep', null, function() {})
   res.status(200).send({responseMessage: "Sleeping"})
 })
 
-router.get('/displaySleep', function (req, res) {
+router.post('/displaySleep', function (req, res) {
   commandService.execute('power', 'displaySleep', null, function() {})
   res.status(200).send({responseMessage: "Display Sleep"})
 })
