@@ -153,12 +153,9 @@ Usage:-
 
 ### Todo Scripts :
 
-- [ ] Screenshot
 - [X] Temperature & System Stats
-- [ ] Music Playback
-- [ ] Screen Recording
-- [ ] Webcam Recording
-- [ ] Show Alert
+- [ ] Music Playback (iTunes & Youtube)
+- [ ] Screen, Webcam Recording & Screenshot, Show Alert
 
 
 ## Writing Custom Scripts :
