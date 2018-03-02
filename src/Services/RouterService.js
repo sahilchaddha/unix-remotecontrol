@@ -12,13 +12,13 @@ function initSessionManager() {
     this.router.use(function authenticateSessionToken (req, res, next) { 
         
         if (req.headers['token'] == null) {
-            res.send('Authentication Failed: token Header Required.')
+            res.status(400).send({responseMessage: "Authentication Failed: token Header Required.", errorCode: 00})
             return
         }
 
         if (!sessionService.authenticate(req.headers['token'])) {
             // Authentication Failed
-            res.send('Error: Authentication Failed')
+            res.status(400).send({responseMessage: "Error: Authentication Failed", errorCode: 01})
             return
         }
 

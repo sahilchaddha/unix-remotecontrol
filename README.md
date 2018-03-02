@@ -27,7 +27,7 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 ## Installation :
 
 ```
- $ git clone https://github.com/sahilchaddha/unix-remotecontrol.git && cd unix-remotecontrol
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-RemoteControl
  $ npm install
 ```
 
@@ -117,11 +117,110 @@ Usage:-
 | /displaySleep        | Turns the Display to Sleep                      | None       | false |
 
 
+### Todo Scripts :
+
+- [ ] Screenshot
+- [ ] Temp Sensor
+- [ ] Music Playback
+- [ ] Screen Recording
+- [ ] Webcam Recording
+- [ ] Show Alert
+
+
 ## Writing Custom Scripts :
+
+Creating Your Router :
+
+You can create your custom router inside `Routes` folder.
+
+```
+//DummyRouter.js
+var router = require('../Services/RouterService').router // Use RouterService.router
+var commandService = require('../Services/CommandService.js')
+
+router.get('/hello', function (req, res) {
+  res.send('Hello')
+  // Run Your npm commands
+  // or call Shell Scripts using Command Service
+
+    commandService.execute('dummy', 'sayHello', options, function(){})
+})
+
+module.exports = router
+```
+
+Adding your Router to Valid Routes :
+
+Add your custom router inside `routes.js`
+
+```
+var powerRouter = require('./Routes/PowerRouter.js')
+var dummyRouter = require('./Routes/DummyRouter.js')
+
+var routes = [
+    {
+        url: '/power',
+        routerClass: powerRouter
+    },
+    {
+        url: '/dummy',
+        routerClass: dummyRouter
+    }
+]
+
+module.exports = routes
+```
+
+Adding Your Shell Scripts :
+
+You can use Command Service to execute commands : 
+
+To add Commands, you can inject your commands inside `Commands/commands.js`
+
+```
+var dummyCommands = {
+    sayHello: {
+        command: ['say', 'hello'],
+        sudo: false // Set as true if command need sudo access
+    }
+}
+
+module.exports = {
+    // power: powerCommands,
+    dummy: dummyCommands
+}
+```
+
 
 ### Apple Scripts
 
+Apple scripts in format `.scpt` are to be injected inside `AppleScripts` folder.
+
+You can add command inside `commands.js` 
+
+```
+var dummyCommands = {
+    sayHello: {
+        command: ['say', 'hello'],
+        sudo: false // Set as true if command need sudo access
+    },
+    runAppleScript: {
+        command: ['osascript', 'src/Commands/AppleScripts/dummyAS.scpt'],
+        sudo: false
+    }
+}
+
+module.exports = {
+    // power: powerCommands,
+    dummy: dummyCommands
+}
+```
+
+
 ## Homebridge :
+
+WIP
 
 ### Running Forever on Rasberry Pi
 
+WIP

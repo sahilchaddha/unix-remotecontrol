@@ -15,7 +15,7 @@ router.get('/shutdown', function (req, res) {
   }
 
   commandService.execute('power', 'shutdown', options, function(){})
-  res.status(200).send('Shutting Down')
+  res.status(200).send({responseMessage: "Shutting Down"})
 })
 
 router.get('/restart', function (req, res) {
@@ -26,31 +26,31 @@ router.get('/restart', function (req, res) {
     options.push('now')
   }
   commandService.execute('power', 'restart', options, function() {})
-  res.status(200).send('Restarting')
+  res.status(200).send({responseMessage: "Restarting"})
 })
 
 router.get('/halt', function (req, res) {
   commandService.execute('power', 'halt', null, function() {})
-  res.status(200).send('System Halt')
+  res.status(200).send({responseMessage: "System Halt"})
 })
 
 router.get('/logout', function (req, res) {
   commandService.execute('power', 'logout', null, function() {})
-  res.status(200).send('Display Sleeping')
+  res.status(200).send({responseMessage: "Logging out in 60 secs"})
 })
 
 router.get('/sleep', function (req, res) {
   commandService.execute('power', 'sleep', null, function() {})
-  res.status(200).send('Sleeping')
+  res.status(200).send({responseMessage: "Sleeping"})
 })
 
 router.get('/displaySleep', function (req, res) {
   commandService.execute('power', 'displaySleep', null, function() {})
-  res.status(200).send('Display Sleeping')
+  res.status(200).send({responseMessage: "Display Sleep"})
 })
 
 router.get('/ping', function (req, res) {
-  res.status(200).send('Pong')
+  res.status(200).send({responseMessage: "Pong"})
 })
 
 module.exports = router
