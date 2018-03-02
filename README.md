@@ -137,7 +137,7 @@ Usage:-
 ### Todo Scripts :
 
 - [ ] Screenshot
-- [ ] Temp Sensor
+- [X] Temperature & System Stats
 - [ ] Music Playback
 - [ ] Screen Recording
 - [ ] Webcam Recording
