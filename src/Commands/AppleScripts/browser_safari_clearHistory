@@ -1,0 +1,10 @@
+activate application "Safari"
+tell application "System Events"
+	tell process "Safari"
+		set frontmost to true
+		click menu "History" of menu bar 1
+		click menu item "Clear History…" of menu "History" of menu bar 1
+		click (button "Clear History" of sheet 1 of window "Favorites" of application process "Safari" of application "System Events")
+	end tell
+end tell
+
