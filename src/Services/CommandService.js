@@ -13,7 +13,7 @@ function CommandService() {
 function checkSudoPassword() {
     sudo.check(function(valid) {
         if (!valid) {
-            logger.error('Invalid Sudo Password. Check environment.js')
+            logger.error('Invalid Sudo Password. Check environment.js . Some commands wont work properly. Please provide correct sudo password', false)
         }
     })
 }
