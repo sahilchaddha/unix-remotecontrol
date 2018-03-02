@@ -112,10 +112,10 @@ Usage:-
 | /halt           | POST | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
 | /shutdown              | POST | Shut downs the system                                 | `time` : Delays Shutdown in minutes       | true |
 | /restart           | POST | Restarts the system | `time` : Delays Shutdown in minutes      | true |
-| /logout         | POST | Logs Out the user                                  | None      | false |
+| /logout         | POST | Logs Out the user (OSX Only)                                  | None      | false |
 | /sleep         | POST | Turns the System to Sleep                       | None       | false |
 | /displaySleep        | POST | Turns the Display to Sleep                      | None       | false |
-
+| /cancelShutdown        | POST | Cancels Scheduled Shutdown/Restart Task                      | None       | true |
 
 ### System Stats Command Type 
 
@@ -132,6 +132,23 @@ Usage:-
 | /ram               | GET | Returns current Ram Status                                 | None       | false |
 | /storage           | GET | Returns current Storage Stats | None      | false |
 | /battery         | GET | Returns current Battery Information                                  | None      | false |
+
+
+### System Spy Command Type 
+
+Usage:- 
+
+`localhost:3000/systemSpy/screenshot`
+
+`localhost:3000/systemSpy/camRecord`
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /screenshot      | POST | Screenshots Current Screen, Saves & returns image         | None       | false |
+| /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | None      | false |
+| /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | None       | false |
+| /alert           | POST | Shows Alert to User | None      | false |
+| /isRecording         | GET | Returns Recording Status                                  | `type` : `screen` or `cam` type of recording      | false |
 
 
 ### Todo Scripts :

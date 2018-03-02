@@ -49,6 +49,11 @@ router.post('/displaySleep', function (req, res) {
   res.status(200).send({responseMessage: "Display Sleep"})
 })
 
+router.post('/cancelShutdown', function (req, res) {
+  commandService.execute('power', 'killShutdown', null, function() {})
+  res.status(200).send({responseMessage: "Shutdown/Restart Cancelled"})
+})
+
 router.get('/ping', function (req, res) {
   res.status(200).send({responseMessage: "Pong"})
 })

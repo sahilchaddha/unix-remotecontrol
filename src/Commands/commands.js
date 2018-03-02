@@ -22,6 +22,10 @@ var powerCommands = {
     logout: {
         command: ['osascript', 'src/Commands/AppleScripts/logout.scpt'],
         sudo: false
+    },
+    killShutdown: {
+        command: ['killall', 'shutdown'],
+        sudo: true
     }
 }
 
