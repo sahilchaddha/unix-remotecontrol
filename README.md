@@ -133,6 +133,15 @@ Usage:-
 | /storage           | GET | Returns current Storage Stats | None      | false |
 | /battery         | GET | Returns current Battery Information                                  | None      | false |
 
+### Browser Command Type 
+
+Usage:- 
+
+`localhost:3000/browser/googleChromeReset `
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /googleChromeReset      | POST | Clear all data of google chrome and reset         | None       | false |
 
 ### System Spy Command Type 
 
@@ -154,6 +163,9 @@ Usage:-
 ### Todo Scripts :
 
 - [X] Temperature & System Stats
+- [X] Reset Google Chrome
+- [ ] Reset Firefox
+- [ ] Reset Safari
 - [ ] Music Playback (iTunes & Youtube)
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
 

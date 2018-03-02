@@ -1,0 +1,2 @@
+tell application "Google Chrome" to quit
+do shell script "rm -rf ~/Library/Application\\ Support/Google/Chrome/Default"
