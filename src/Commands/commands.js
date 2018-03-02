@@ -31,11 +31,11 @@ var powerCommands = {
 
 var browserCommands = {
     googleChromeReset : {
-        command: ['osascript', 'src/Commands/AppleScripts/browser_googlechrome_reset.scpt']
+        command: ['osascript', 'src/Commands/AppleScripts/browser_googlechrome_reset.scpt'],
         sudo: false
     },
     safariClearHistory : {
-        command: ['osascript', 'src/Commands/AppleScripts/browser_safari_clearHistory.scpt']
+        command: ['osascript', 'src/Commands/AppleScripts/browser_safari_clearHistory.scpt'],
         sudo: false
     }
 }
