@@ -31,11 +31,20 @@ var powerCommands = {
 
 var browserCommands = {
     googleChromeReset : {
-        command: ['osascript', 'src/Commands/AppleScripts/browser_googlechrome_reset.scpt']
+        command: ['osascript', 'src/Commands/AppleScripts/browser_googlechrome_reset.scpt'],
+        sudo: false
+    }
+}
+
+var spyCommands = {
+    screenshot: {
+        command: ['screencapture', '-x'],
+        sudo: false
     }
 }
 
 module.exports = {
     power: powerCommands,
-    browser: browserCommands
+    browser: browserCommands,
+    spyCommands: spyCommands
 }
