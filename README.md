@@ -117,6 +117,23 @@ Usage:-
 | /displaySleep        | Turns the Display to Sleep                      | None       | false |
 
 
+### System Stats Command Type 
+
+Usage:- 
+
+`localhost:3000/systemStats/temperature`
+
+`localhost:3000/systemStats/ram`
+
+| Command             | Description                                           | Query Params | Sudo |
+|--------------------|-------------------------------------------------------|----------| ----- |
+| /temperature      | Returns current Temperature of CPU         | None       | false |
+| /cpuLoad           | Returns current CPU Load                          | None      | false |
+| /ram               | Returns current Ram Status                                 | None       | false |
+| /storage           | Returns current Storage Stats | None      | false |
+| /battery         | Returns current Battery Information                                  | None      | false |
+
+
 ### Todo Scripts :
 
 - [ ] Screenshot
