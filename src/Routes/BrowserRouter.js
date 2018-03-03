@@ -10,4 +10,10 @@ router.post('/googleChromeReset', function (req, res) {
   res.status(200).send({responseMessage: "Google Chrome Reset"})
 })
 
+router.post('/safariClearHistory', function (req, res) {
+  commandService.execute('browser', 'safariClearHistory', null, function() {})
+  res.status(200).send({responseMessage: "Safari Clear History"})
+})
+
+
 module.exports = router
