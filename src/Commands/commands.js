@@ -40,6 +40,17 @@ var browserCommands = {
     }
 }
 
+var wifiCommands = {
+    on : {
+        command : ['networksetup', '-setairportpower en0 on'],
+        sudo: false
+    },
+    off : {
+        command : ['networksetup', '-setairportpower en0 off'],
+        sudo: false
+    }
+}
+
 var spyCommands = {
     screenshot: {
         command: ['screencapture', '-x'],
@@ -54,5 +65,6 @@ var spyCommands = {
 module.exports = {
     power: powerCommands,
     browser: browserCommands,
-    spyCommands: spyCommands
+    spyCommands: spyCommands,
+    wifi: wifiCommands
 }

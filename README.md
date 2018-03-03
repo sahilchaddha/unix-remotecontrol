@@ -146,6 +146,17 @@ Usage:-
 
 **NOTE**: For safariClearHistory you will have to add terminal or whatever command line tool you are using should be added in System Preferences -> Security & Privacy -> Privacy -> Accessibility. When you run this command for the first time there will a prompt to add command line tool in Accessibility.
 
+### Wi-fi Command Type 
+
+Usage:- 
+
+`localhost:3000/wifi/on `
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /on      | POST | Turn on wifi         | None       | false |
+| /off      | POST | Turn off wifi        | None       | false |
+
 ### System Spy Command Type 
 
 Usage:- 
