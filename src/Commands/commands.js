@@ -44,6 +44,10 @@ var spyCommands = {
     screenshot: {
         command: ['screencapture', '-x'],
         sudo: false
+    },
+    resetiSightCamera: {
+        command: ['killall', 'VDCAssistant'],
+        sudo: true
     }
 }
 
