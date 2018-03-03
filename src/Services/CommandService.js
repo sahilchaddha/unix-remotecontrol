@@ -28,27 +28,36 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
         params = []
     }
 
+    var processResult = function(stdout) {  
+        var lines = stdout.toString().split('\n');
+        var results = new Array();
+        lines.forEach(function(line) {
+            var parts = line.split(':');
+            results[parts[0]] = parts[1];
+        });
+        return results
+    };
+
+    var callCallback = function(error, stdOut, stdErr) {
+        if (callback != null) {
+            if (stdOut != null) {
+                callback(processResult(stdOut))
+            } else {
+                callback(error)
+            }
+        }
+    }
+
     var commandToExecute = executableCommand.command.concat(params)
 
     if (executableCommand.sudo) {
         sudo.exec(commandToExecute, function(err, pid, result) {
-            logger.info(result)
-            if (err) {
-                callback(false)
-                return
-            }
-            callback(true)
+            callCallback(error, stdOut, stdErr)
         });
     } else {
         //Run Shell without sudo
         exec(commandToExecute.join(' '), function(error, stdOut, stdErr) {
-            logger.info(stdOut)
-            logger.info(stdErr)
-            if (error) {
-                callback(false)
-                return
-            }
-            callback(true)
+            callCallback(error, stdOut, stdErr)
         })
     }
 }

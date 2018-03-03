@@ -48,6 +48,10 @@ var wifiCommands = {
     off : {
         command : ['networksetup', '-setairportpower en0 off'],
         sudo: false
+    },
+    status : {
+        command : ['ifconfig', 'en0'],
+        sudo: false
     }
 }
 

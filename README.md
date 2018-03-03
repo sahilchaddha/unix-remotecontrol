@@ -154,6 +154,7 @@ Usage:-
 
 | Command             | Method | Description                                           | Query Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /status      | GET | Returns Wifi Enabled/Disabled Status (OS X Only)       | None       | false |
 | /on      | POST | Turn on wifi (OS X Only)        | None       | false |
 | /off      | POST | Turn off wifi (OS X Only)       | None       | false |
 

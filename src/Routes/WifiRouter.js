@@ -15,5 +15,16 @@ router.post('/off', function (req, res) {
   res.status(200).send({responseMessage: "Wifi off"})
 })
 
+router.get('/status', function (req, res) {
+  commandService.execute('wifi', 'status', null, function(response) {
+    if (response['\tstatus'] != null && response['\tstatus'] == " active") {
+      res.status(200).send({responseMessage: "Wifi off", response: {wifiStatus: true}})
+      return
+    }
+
+    res.status(200).send({responseMessage: "Wifi off", response: {wifiStatus: false}})
+  })
+})
+
 
 module.exports = router
