@@ -144,7 +144,7 @@ Usage:-
 | /googleChromeReset      | POST | Clear all data of google chrome and reset         | None       | false |
 | /safariClearHistory      | POST | Clear histroy of safari        | None       | false |
 
-Note:- For safariClearHistory you will have to add terminal or whatever command line tool you are using should be added in System Preferences -> Security & Privacy -> Privacy -> Accessibility. When you will run this command first time there will a promt to add command line tool in Accessibility.
+**NOTE**: For safariClearHistory you will have to add terminal or whatever command line tool you are using should be added in System Preferences -> Security & Privacy -> Privacy -> Accessibility. When you run this command for the first time there will a prompt to add command line tool in Accessibility.
 
 ### System Spy Command Type 
 
