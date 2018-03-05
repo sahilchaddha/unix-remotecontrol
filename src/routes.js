@@ -38,6 +38,8 @@ var routes = [
     
     , { url: '/bluetooth/status', routerClass: bluetoothRouter.bluetooth_status, type: 'GET' }
     , { url: '/bluetooth/', routerClass: bluetoothRouter.bluetooth_home, type: 'GET' }
+    , { url: '/bluetooth/on', routerClass: bluetoothRouter.bluetooth_on, type: 'POST' }
+    , { url: '/bluetooth/off', routerClass: bluetoothRouter.bluetooth_off, type: 'POST' }
 
     , { url: '/wifi/', routerClass: wifiRouter.wifi_home, type: 'GET' }
     , { url: '/wifi/on', routerClass: wifiRouter.wifi_on, type: 'POST' }

@@ -56,8 +56,15 @@ var wifiCommands = {
 }
 
 var bluetoothCommands = {
+    on : {
+        command : ['blueutil', '-p on'],
+        sudo: false
+    },
+    off : {
+        command : ['blueutil', '-p off'],
+        sudo: false
+    },
     status : {
-        //OS X Only
         command : ['defaults read /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState'],
         sudo: false
     }   
