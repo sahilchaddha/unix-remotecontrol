@@ -18,8 +18,8 @@ request(app)
   });
 
   request(app)
-  .get("/power")
-  .expect(400)
+  .post("/power")
+  .expect(404)
   .end(function(err, res) {
     if (err) throw err;
   });
