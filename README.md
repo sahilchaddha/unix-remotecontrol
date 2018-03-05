@@ -175,6 +175,24 @@ Usage:-
 | /alert           | POST | Shows Alert to User | None      | false |
 | /isRecording         | GET | Returns Recording Status (OSX Only)                                  | `type` : `screen` or `cam` type of recording      | false |
 
+### Music Command Type 
+
+Usage:- 
+
+`localhost:3000/music/itunesPlaylist`
+
+`localhost:3000/music/setVolume?volume=10`
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /youtubePlaylist      | POST | Opens Youtube & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |
+| /itunesPlaylist      | POST | Opens iTunes & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |
+| /setVolume           | POST | Sets New Volume (OSX Only)                          | `volume`: volume to be set. Should be between 0 to 10      | false |
+| /getVolume               | GET | Returns Current Volume (OSX Only)                                 | None       | false |
+| /mute           | POST | Mutes the System (OSX Only)                          | None      | false |
+| /unmute               | POST | UnMutes the System (OSX Only)                                 | None       | false |
+| /isMuted           | GET | Returns Mute Status (OSX Only)                          | None      | false |
+
 
 ### Todo Scripts :
 
@@ -182,7 +200,7 @@ Usage:-
 - [X] Reset Google Chrome
 - [ ] Reset Firefox
 - [X] Reset Safari
-- [ ] Music Playback (iTunes & Youtube)
+- [X] Music Playback (iTunes & Youtube), Volume Control
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
 
 
