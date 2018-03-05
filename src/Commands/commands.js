@@ -74,10 +74,46 @@ var spyCommands = {
     }
 }
 
+var applicationCommands = {
+    open: {
+        command: ['open'],
+        sudo: false
+    }
+}
+
+var musicCommands = {
+    itunesPlaylist: {
+        command: ['osascript', 'src/Commands/AppleScripts/iTunesPlaylist.scpt'],
+        sudo: false
+    },
+    setVolume: {
+        command: ['osascript', 'src/Commands/AppleScripts/setVolume.scpt'],
+        sudo: false
+    },
+    getVolume: {
+        command: ['osascript', 'src/Commands/AppleScripts/getVolume.scpt'],
+        sudo: false
+    },
+    mute: {
+        command: ['osascript', '-e', '"set volume with output muted"'],
+        sudo: false
+    },
+    unmute: {
+        command: ['osascript','-e', '"set volume without output muted"'],
+        sudo: false
+    },
+    isMute: {
+        command: ['osascript', 'src/Commands/AppleScripts/isMuted.scpt'],
+        sudo: false
+    }
+}
+
 module.exports = {
     power: powerCommands,
     browser: browserCommands,
     spyCommands: spyCommands,
     wifi: wifiCommands,
-    bluetooth: bluetoothCommands
+    bluetooth: bluetoothCommands,
+    application: applicationCommands,
+    music: musicCommands
 }

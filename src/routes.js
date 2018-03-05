@@ -3,6 +3,7 @@ var systemStatsRouter = require('./Routes/SystemStatsRouter.js')
 var browserRouter = require('./Routes/BrowserRouter.js')
 var systemSpyRouter = require('./Routes/SystemSpyRouter.js')
 var wifiRouter = require('./Routes/WifiRouter.js')
+var musicRouter = require('./Routes/MusicRouter.js')
 var bluetoothRouter = require('./Routes/BluetoothRouter.js')
 
 var routes = [
@@ -42,6 +43,15 @@ var routes = [
     , { url: '/wifi/on', routerClass: wifiRouter.wifi_on, type: 'POST' }
     , { url: '/wifi/off', routerClass: wifiRouter.wifi_off, type: 'POST' }
     , { url: '/wifi/status', routerClass: wifiRouter.wifi_status, type: 'GET' }
+
+    , { url: '/music/', routerClass: musicRouter.music_home, type: 'GET' }
+    , { url: '/music/youtubePlaylist', routerClass: musicRouter.music_youtubePlaylist, type: 'POST' }
+    , { url: '/music/itunesPlaylist', routerClass: musicRouter.music_itunesPlaylist, type: 'POST' }
+    , { url: '/music/setVolume', routerClass: musicRouter.music_setVolume, type: 'POST' }
+    , { url: '/music/getVolume', routerClass: musicRouter.music_getVolume, type: 'GET' }
+    , { url: '/music/mute', routerClass: musicRouter.music_mute, type: 'POST' }
+    , { url: '/music/unmute', routerClass: musicRouter.music_unmute, type: 'POST' }
+    , { url: '/music/isMuted', routerClass: musicRouter.music_isMuted, type: 'GET' }
 ]
 
 module.exports = routes

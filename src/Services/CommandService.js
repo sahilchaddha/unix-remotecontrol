@@ -75,11 +75,7 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
 
     var callCallback = function(error, stdOut, stdErr) {
         if (callback != null) {
-            if (stdOut != null) {
-                callback(processResult(stdOut))
-            } else {
-                callback(error)
-            }
+            callback(processResult(stdOut, error, stdErr))
         }
     }
 

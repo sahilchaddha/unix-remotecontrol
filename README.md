@@ -1,4 +1,4 @@
-# Unix Remote Control (IoT)
+# Unix Remote Control (IoT) [![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
 
 Runs Scripts on Mac/Linux remotely.
 
@@ -158,6 +158,16 @@ Usage:-
 | /on      | POST | Turn on wifi (OS X Only)        | None       | false |
 | /off      | POST | Turn off wifi (OS X Only)       | None       | false |
 
+### Bluetooth Command Type 
+
+Usage:- 
+
+`localhost:3000/bluetooth/status `
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /status      | GET | Returns Bluetooth Enabled/Disabled Status (OS X Only)       | None       | false |
+
 ### System Spy Command Type 
 
 Usage:- 
@@ -175,14 +185,26 @@ Usage:-
 | /alert           | POST | Shows Alert to User | None      | false |
 | /isRecording         | GET | Returns Recording Status (OSX Only)                                  | `type` : `screen` or `cam` type of recording      | false |
 
+### Music Command Type 
+
+Usage:- 
+
+`localhost:3000/music/itunesPlaylist`
+
+`localhost:3000/music/setVolume?volume=10`
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /youtubePlaylist      | POST | Opens Youtube & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |
+| /itunesPlaylist      | POST | Opens iTunes & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |
+| /setVolume           | POST | Sets New Volume (OSX Only)                          | `volume`: volume to be set. Should be between 0 to 10      | false |
+| /getVolume               | GET | Returns Current Volume (OSX Only)                                 | None       | false |
+| /mute           | POST | Mutes the System (OSX Only)                          | None      | false |
+| /unmute               | POST | UnMutes the System (OSX Only)                                 | None       | false |
+| /isMuted           | GET | Returns Mute Status (OSX Only)                          | None      | false |
+
 
 ### Todo Scripts :
-
-- [X] Temperature & System Stats
-- [X] Reset Google Chrome
-- [ ] Reset Firefox
-- [X] Reset Safari
-- [ ] Music Playback (iTunes & Youtube)
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
 
 
@@ -194,37 +216,30 @@ You can create your custom router inside `Routes` folder.
 
 ```
 //DummyRouter.js
-var router = require('../Services/RouterService').router // Use RouterService.router
 var commandService = require('../Services/CommandService.js')
 
-router.get('/hello', function (req, res) {
+//Define any custom command 
+module.exports.sayHello = function(req, res) {
   res.send('Hello')
   // Run Your npm commands
   // or call Shell Scripts using Command Service
 
     commandService.execute('dummy', 'sayHello', options, function(){})
-})
+};
 
-module.exports = router
 ```
 
 Adding your Router to Valid Routes :
 
-Add your custom router inside `routes.js`
+Add your custom router with respective functions inside `routes.js`
 
 ```
 var powerRouter = require('./Routes/PowerRouter.js')
 var dummyRouter = require('./Routes/DummyRouter.js')
 
 var routes = [
-    {
-        url: '/power',
-        routerClass: powerRouter
-    },
-    {
-        url: '/dummy',
-        routerClass: dummyRouter
-    }
+    { url: '/power/', routerClass: powerRouter.powerHome, type: 'GET' }
+    , { url: '/sayHello/', routerClass: dummyRouter.sayHello, type: 'GET' }
 ]
 
 module.exports = routes

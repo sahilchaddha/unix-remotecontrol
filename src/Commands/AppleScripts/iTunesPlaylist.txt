@@ -1,0 +1,10 @@
+on run args
+set playlist_name to "" & item 1 of args & ""
+	tell application "iTunes"
+		activate
+	end tell
+	delay 10
+	tell application "iTunes"
+		play user playlist playlist_name
+	end tell
+end run

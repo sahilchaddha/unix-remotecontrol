@@ -1,0 +1,3 @@
+get volume settings
+set theOutput to output muted of result
+return theOutput
