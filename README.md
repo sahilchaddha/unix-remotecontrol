@@ -206,6 +206,10 @@ Usage:-
 
 ### Todo Scripts :
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
+- [ ] Connect to bluetooth device
+- [ ] Connect to wifi 
+- [ ] Bluetooth on/off
+- [ ] Timer for bluetooth and wifi
 
 
 ## Writing Custom Scripts :
