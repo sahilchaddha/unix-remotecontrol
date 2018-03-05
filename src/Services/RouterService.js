@@ -3,13 +3,10 @@ var sessionService = require('./SessionService.js')
 
 function RouterService() { 
     this.routes = []
-    this.router = express.Router()
-    initSessionManager.call(this)
 }
 
-//Private Method
-function initSessionManager() {
-    this.router.use(function authenticateSessionToken (req, res, next) { 
+RouterService.prototype.initSessionManager = function(app) {
+    app.use(function authenticateSessionToken (req, res, next) { 
         
         if (req.headers['token'] == null) {
             res.status(400).send({responseMessage: "Authentication Failed: token Header Required.", errorCode: 00})
@@ -26,9 +23,9 @@ function initSessionManager() {
         next()
       })
 }
-
 //Public Method
 RouterService.prototype.addRoutes = function(app, routes) {
+    this.initSessionManager(app)
     this.routes = routes
 
     // Adding Routes
