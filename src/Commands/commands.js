@@ -55,6 +55,14 @@ var wifiCommands = {
     }
 }
 
+var bluetoothCommands = {
+    status : {
+        //OS X Only
+        command : ['defaults read /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState'],
+        sudo: false
+    }   
+}
+
 var spyCommands = {
     screenshot: {
         command: ['screencapture', '-x'],
@@ -70,5 +78,6 @@ module.exports = {
     power: powerCommands,
     browser: browserCommands,
     spyCommands: spyCommands,
-    wifi: wifiCommands
+    wifi: wifiCommands,
+    bluetooth: bluetoothCommands
 }

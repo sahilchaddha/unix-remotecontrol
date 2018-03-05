@@ -3,6 +3,7 @@ var systemStatsRouter = require('./Routes/SystemStatsRouter.js')
 var browserRouter = require('./Routes/BrowserRouter.js')
 var systemSpyRouter = require('./Routes/SystemSpyRouter.js')
 var wifiRouter = require('./Routes/WifiRouter.js')
+var bluetoothRouter = require('./Routes/BluetoothRouter.js')
 
 var routes = [
     {
@@ -24,6 +25,10 @@ var routes = [
     {
         url: '/wifi',
         routerClass: wifiRouter
+    },
+    {
+        url: '/bluetooth',
+        routerClass: bluetoothRouter
     }
 ]
 

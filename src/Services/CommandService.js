@@ -18,6 +18,26 @@ function checkSudoPassword() {
     })
 }
 
+function clean_data(obj) {
+    for (var key in obj) {
+
+        // Delete null, undefined, "", " "
+        if (obj[key] === null || obj[key] === undefined || obj[key] === "" || obj[key] === " ") {
+            delete obj[key];
+        }
+        // Delete empty object
+        // Note : typeof Array is also object
+        if (typeof obj[key] === 'object' && Object.keys(obj[key]).length <= 0) {
+            delete obj[key];
+        }
+        // If non empty object call function again
+        if(typeof obj[key] === 'object'){
+            clean_data(obj[key]);
+        }
+    }
+    return obj;
+}
+
 CommandService.prototype.execute = function(commandType, commandKey, params, callback) {
     var executableCommand = commands[commandType][commandKey]
  
@@ -29,12 +49,27 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
     }
 
     var processResult = function(stdout) {  
-        var lines = stdout.toString().split('\n');
+     
+        var lines = stdout.toString().trim().split('\n');
+        lines = clean_data(lines)
         var results = new Array();
+
         lines.forEach(function(line) {
             var parts = line.split(':');
-            results[parts[0]] = parts[1];
+
+            //If key value is undefined than return
+            if (parts[0] == undefined) {
+                return
+            }
+
+            //If value is undefined than return key name
+            if (parts[1] == undefined) {
+                parts[1] = parts[0]
+            }
+
+            results[parts[0].trim()] = parts[1].trim();
         });
+
         return results
     };
 

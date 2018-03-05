@@ -17,7 +17,8 @@ router.post('/off', function (req, res) {
 
 router.get('/status', function (req, res) {
   commandService.execute('wifi', 'status', null, function(response) {
-    if (response['\tstatus'] != null && response['\tstatus'] == " active") {
+
+    if (response['status'] != null && response['status'] == "active") {
       res.status(200).send({responseMessage: "Wifi Status : ON", response: {wifiStatus: true}})
       return
     }
