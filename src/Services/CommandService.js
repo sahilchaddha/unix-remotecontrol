@@ -20,6 +20,11 @@ function checkSudoPassword() {
 
 CommandService.prototype.execute = function(commandType, commandKey, params, callback) {
     var executableCommand = commands[commandType][commandKey]
+    
+    if (executableCommand == null) {
+        logger.info("Command Not Found : " + commandType + " : " + commandKey)
+        return
+    }
  
     logger.debug('*********\nExecuting Command\nSudo: '+executableCommand.sudo + ' \nCommand Type : ' + commandType
      + '\nCommand Key : ' + commandKey + '\nCommand : ' + executableCommand.command + '\n*********')
@@ -44,8 +49,10 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
     };
 
     var callCallback = function(error, stdOut, stdErr) {
+        logger.error(error, false)
+        logger.info(stdOut)
         if (callback != null) {
-            callback(processResult(stdOut, error, stdErr))
+            callback(processResult(stdOut), error, stdErr)
         }
     }
 

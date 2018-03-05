@@ -70,6 +70,10 @@ var applicationCommands = {
     open: {
         command: ['open'],
         sudo: false
+    },
+    config: {
+        command: ['echo "Config Location: "','&&', 'pwd', '&&', 'echo "File Name : environment.js"', '&&', 'open', 'src/environment.js'],
+        sudo: false
     }
 }
 

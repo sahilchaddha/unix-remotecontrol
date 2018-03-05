@@ -5,7 +5,10 @@ function Logger() {
 }
 
 Logger.prototype.error = function(log, shouldExit = true) {
-    console.log(log)
+    if (log != null) {
+        console.log("Error : ")
+        console.log(log)
+    }
     if (shouldExit) {
         process.exit()
     }
