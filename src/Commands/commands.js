@@ -104,11 +104,27 @@ var musicCommands = {
     }
 }
 
+var bluetoothCommands = {
+    on : {
+        command : ['blueutil', '-p on'],
+        sudo: false
+    },
+    off : {
+        command : ['blueutil', '-p off'],
+        sudo: false
+    },
+    status : {
+        command : ['defaults read /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState'],
+        sudo: false
+    }   
+}
+
 module.exports = {
     power: powerCommands,
     browser: browserCommands,
     spyCommands: spyCommands,
     wifi: wifiCommands,
     application: applicationCommands,
-    music: musicCommands
+    music: musicCommands,
+    bluetooth: bluetoothCommands
 }
