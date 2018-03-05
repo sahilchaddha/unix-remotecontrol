@@ -195,12 +195,6 @@ Usage:-
 
 
 ### Todo Scripts :
-
-- [X] Temperature & System Stats
-- [X] Reset Google Chrome
-- [ ] Reset Firefox
-- [X] Reset Safari
-- [X] Music Playback (iTunes & Youtube), Volume Control
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
 
 
