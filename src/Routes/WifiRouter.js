@@ -1,4 +1,4 @@
-var router = require('../Services/RouterService').router
+var router = require('express').Router()
 var commandService = require('../Services/CommandService.js')
 
 router.get('/', function (req, res) {

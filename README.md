@@ -206,7 +206,7 @@ You can create your custom router inside `Routes` folder.
 
 ```
 //DummyRouter.js
-var router = require('../Services/RouterService').router // Use RouterService.router
+var router = require('express').Router() // Create New Router
 var commandService = require('../Services/CommandService.js')
 
 router.get('/hello', function (req, res) {

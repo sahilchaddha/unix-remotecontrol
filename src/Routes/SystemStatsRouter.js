@@ -1,4 +1,4 @@
-var router = require('../Services/RouterService').router
+var router = require('express').Router()
 const si = require('systeminformation');
 
 // define the home page route => /systemStats
