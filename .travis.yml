@@ -3,7 +3,7 @@ sudo: false
 os:
   - osx
 install:
-  - npm install
+  - npm install --ignore-scripts
 script:
   - npm test
 notifications:
