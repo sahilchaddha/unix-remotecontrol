@@ -1,5 +1,8 @@
 language: node_js
 sudo: false
+matrix:
+  allow_failures:
+    - os: osx
 install:
   - npm install
 script:
