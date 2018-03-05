@@ -1,5 +1,7 @@
 language: node_js
 sudo: false
+os:
+  - osx
 install:
   - npm install
 script:
