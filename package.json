@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "node src/test.js"
+    "test": "node src/test.js",
+    "postinstall": "brew install blueutil"
   },
   "repository": {
     "type": "git",

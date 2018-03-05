@@ -63,6 +63,10 @@ var spyCommands = {
     resetiSightCamera: {
         command: ['killall', 'VDCAssistant'],
         sudo: true
+    },
+    resetCameraAssistant: {
+        command: ['killall', 'AppleCameraAssistant'],
+        sudo: true
     }
 }
 
