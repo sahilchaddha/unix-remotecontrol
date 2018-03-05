@@ -158,6 +158,20 @@ Usage:-
 | /on      | POST | Turn on wifi (OS X Only)        | None       | false |
 | /off      | POST | Turn off wifi (OS X Only)       | None       | false |
 
+### Bluetooth Command Type 
+
+Usage:- 
+
+`localhost:3000/bluetooth/status `
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /status      | GET | Returns Bluetooth Enabled/Disabled Status (OS X Only)       | None       | false |
+| /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
+| /off      | POST | Turn off Bluetooth (OS X Only)       | None       | false |
+
+**NOTE**: For Bluetooth on and off we are using this library [blueutil](https://github.com/imsrc21/blueutil). Please install blueutil via brew.
+
 ### System Spy Command Type 
 
 Usage:- 
