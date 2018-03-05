@@ -158,6 +158,20 @@ Usage:-
 | /on      | POST | Turn on wifi (OS X Only)        | None       | false |
 | /off      | POST | Turn off wifi (OS X Only)       | None       | false |
 
+### Bluetooth Command Type 
+
+Usage:- 
+
+`localhost:3000/bluetooth/status `
+
+| Command             | Method | Description                                           | Query Params | Sudo |
+|--------------------|---------|-------------------------------------------------------|----------| ----- |
+| /status      | GET | Returns Bluetooth Enabled/Disabled Status (OS X Only)       | None       | false |
+| /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
+| /off      | POST | Turn off Bluetooth (OS X Only)       | None       | false |
+
+**NOTE** : For Bluetooth on and off we are using this library https://github.com/imsrc21/blueutil. Please install blueutil via brew.
+
 ### System Spy Command Type 
 
 Usage:- 
@@ -196,6 +210,9 @@ Usage:-
 
 ### Todo Scripts :
 - [ ] Screen, Webcam Recording & Screenshot, Show Alert
+- [ ] Connect to bluetooth device
+- [ ] Connect to wifi 
+- [ ] Timer for bluetooth and wifi
 
 
 ## Writing Custom Scripts :
@@ -206,37 +223,30 @@ You can create your custom router inside `Routes` folder.
 
 ```
 //DummyRouter.js
-var router = require('../Services/RouterService').router // Use RouterService.router
 var commandService = require('../Services/CommandService.js')
 
-router.get('/hello', function (req, res) {
+//Define any custom command 
+module.exports.sayHello = function(req, res) {
   res.send('Hello')
   // Run Your npm commands
   // or call Shell Scripts using Command Service
 
     commandService.execute('dummy', 'sayHello', options, function(){})
-})
+};
 
-module.exports = router
 ```
 
 Adding your Router to Valid Routes :
 
-Add your custom router inside `routes.js`
+Add your custom router with respective functions inside `routes.js`
 
 ```
 var powerRouter = require('./Routes/PowerRouter.js')
 var dummyRouter = require('./Routes/DummyRouter.js')
 
 var routes = [
-    {
-        url: '/power',
-        routerClass: powerRouter
-    },
-    {
-        url: '/dummy',
-        routerClass: dummyRouter
-    }
+    { url: '/power/', routerClass: powerRouter.powerHome, type: 'GET' }
+    , { url: '/sayHello/', routerClass: dummyRouter.sayHello, type: 'GET' }
 ]
 
 module.exports = routes

@@ -1,5 +1,6 @@
 var express = require('express')
 var sessionService = require('./SessionService.js')
+var bluetoothRouter = require('../Routes/BluetoothRouter.js')
 
 function RouterService() { 
     this.routes = []
@@ -34,7 +35,14 @@ RouterService.prototype.addRoutes = function(app, routes) {
     // Adding Routes
     for (var i=0; i < this.routes.length; i++) {
         var route = this.routes[i]
-        app.use(route.url, route.routerClass)
+        
+        console.log(route.url)
+
+        if (route.type == "GET") {
+            app.get(route.url, route.routerClass)
+        } else if (route.type == "POST") {
+            app.post(route.url, route.routerClass)
+        }
     }
 }
 
