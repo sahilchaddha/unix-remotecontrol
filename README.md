@@ -295,3 +295,9 @@ WIP
 ### Running Forever on Rasberry Pi
 
 WIP
+
+
+## Credits : 
+Sahil Chaddha (mail@sahilchaddha.com)
+
+Sumit Chudasama (imsrc21@gmail.com)
