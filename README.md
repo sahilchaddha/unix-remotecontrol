@@ -1,4 +1,4 @@
-# Unix Remote Control (IoT)
+# Unix Remote Control (IoT) [![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
 
 Runs Scripts on Mac/Linux remotely.
 
