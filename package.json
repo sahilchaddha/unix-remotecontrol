@@ -1,6 +1,6 @@
 {
   "name": "unix-remotecontrol",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "preferGlobal": "true",
   "description": "UnixControl -> Control Your MBP remotely",
   "main": "src/server.js",

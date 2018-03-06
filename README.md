@@ -19,15 +19,15 @@ Runs Scripts on Mac/Linux remotely.
 
 ## Why :
 
-I was setting up homebridge (iOS HomeKit Accesory Protocol) on my rasberryPi and after hooking up my IR Blaster, RF Transmitter and other wake-on-lan devices. I wanted my always-on OSX to also be remotely controlled by my iOS Device. So i ended up writing up a small plugin for [Homebridge](https://github.com/nfarina/homebridge) [plugin](https://github.com/sahilchaddha/homebridge-unixControl). 
+I was setting up homebridge (iOS HomeKit Accesory Protocol) on my rasberryPi and after hooking up my IR Blaster, RF Transmitter and other wake-on-lan devices. I wanted my always-on OSX to also be remotely controlled by my iOS Device. So i ended up writing up a small plugin for [Homebridge](https://github.com/nfarina/homebridge) [plugin](https://github.com/sahilchaddha/homebridge-unixcontrol). 
 
 I use this to play itunes, search google and bookmark search results, restart my system, get room temperature using MBP in-build Temp Sensor and adjust airconditioning accordingly, monitor my ec-2 instance stats, sync Spotify Playlist etc.
 
-Homebridge Plugin => [homebridge-unixControl](https://github.com/sahilchaddha/homebridge-unixControl)
+Homebridge Plugin => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
 
 ## How it Works :
 
-This library is directly injected into homebridge with a plugin wrapper => [homebridge-unixControl](https://github.com/sahilchaddha/homebridge-unixControl)
+This library is directly injected into homebridge with a plugin wrapper => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
 
 The plugin queries the system using HTTP API and run shell scripts. The shell requires sudo access to shutdown/reboot the system. More commands can be easily be injected. Feel free to PR.
 
@@ -194,6 +194,7 @@ Usage:-
 | /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
 | /off      | POST | Turn off Bluetooth (OS X Only)       | None       | false |
 | /showPairingAlert      | POST | Show pairing alert or pair with any BLE enabled device (OS X Only)     |  `deviceName`: Bluetooth name of device with percentage encoding       | false |
+| /toogle       | POST | Toogle device bluetooth connection (OS X Only)     |  `deviceName`: Bluetooth name of device with percentage encoding       | false |
 
 **NOTE**: [blueutil](https://github.com/imsrc21/blueutil) is added as a depedancy for Bluetooth Connections. It will be automatically installed during `npm install`. Its added as postInstall Script in `package.json`. If for some reason installation of blueutil fails, you can manually install blueutil `brew install blueutil`
 
@@ -241,6 +242,8 @@ Usage:-
 ### Todo Scripts :
 - [ ] Screen Live Recording
 - [ ] WebCam Live Recording
+- [ ] Remote System Backup
+- [ ] Remote System Format (Need extra OSX Device to test. :P )
 
 
 ## Writing Custom Scripts :
@@ -342,13 +345,28 @@ module.exports = {
 ```
 
 
-## Homebridge :
+## Homebridge on Raspberry Pi :
+
+### Homebridge Configuration : 
 
 WIP
 
-### Running Forever on Rasberry Pi
+### On Pi : 
 
-WIP
+```
+$ npm install -g homebridge
+$ npm install -g homebridge-unixcontrol
+
+// Configure Homebridge config.json
+```
+
+### On Unix System (For Remote Access) : 
+
+```
+$ npm install -g unix-remotecontrol
+$ unixremote --config //Setup Your Configuration
+$ unixremote
+```
 
 
 ## Credits : 
