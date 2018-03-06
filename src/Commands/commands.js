@@ -67,6 +67,14 @@ var spyCommands = {
     resetCameraAssistant: {
         command: ['killall', 'AppleCameraAssistant'],
         sudo: true
+    },
+    alert: {
+        command: ['osascript', 'src/Commands/AppleScripts/showAlert.scpt'],
+        sudo: false
+    },
+    notify: {
+        command: ['osascript', 'src/Commands/AppleScripts/notify.scpt'],
+        sudo: false
     }
 }
 

@@ -18,6 +18,9 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 
 ## Todo :
 
+- [ ] Add Linux Support
+- [ ] Add Windows Support
+- [ ] Refactor With Promises
 - [ ] Replace HTTP API with socket connection.
 - [ ] Implement a working Example
 - [ ] Publish to NPM
@@ -170,7 +173,7 @@ Usage:-
 | /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
 | /off      | POST | Turn off Bluetooth (OS X Only)       | None       | false |
 
-**NOTE**: For Bluetooth on and off we are using this library [blueutil](https://github.com/imsrc21/blueutil). Please install blueutil via brew.
+**NOTE**: [blueutil](https://github.com/imsrc21/blueutil) is added as a depedancy for Bluetooth Connections. It will be automatically installed during `npm install`. Its added as postInstall Script in `package.json`. If for some reason installation of blueutil fails, you can manually install blueutil `brew install blueutil`
 
 ### System Spy Command Type 
 
@@ -180,13 +183,18 @@ Usage:-
 
 `localhost:3000/systemSpy/camRecord`
 
+`localhost:3000/systemSpy/alert?message="Heeeyyy !!! Hooooo !!!"`
+
+`localhost:3000/systemSpy/notify?title="heyyy"&message="hooo"`
+
 | Command             | Method | Description                                           | Query Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /screenshot      | POST | Screenshots Current Screen, Saves & returns image (OSX Only)         | None       | false |
 | /webcamCapture      | POST | Clicks Camera Still, Saves & returns image (OSX Only)         | None       | false |
 | /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | None      | false |
 | /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | None       | false |
-| /alert           | POST | Shows Alert to User | None      | false |
+| /alert           | POST | Shows Alert to User | `message`: Message to Show Alert      | false |
+| /notify           | POST | Shows Notification to User | `title`: Title For Notification, `message`: Message      | false |
 | /isRecording         | GET | Returns Recording Status (OSX Only)                                  | `type` : `screen` or `cam` type of recording      | false |
 
 ### Music Command Type 
@@ -209,7 +217,8 @@ Usage:-
 
 
 ### Todo Scripts :
-- [ ] Screen, Webcam Recording & Screenshot, Show Alert
+- [ ] Screen Live Recording
+- [ ] WebCam Live Recording
 
 
 ## Writing Custom Scripts :
