@@ -38,7 +38,6 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 - [ ] Refactor With Promises
 - [ ] Replace HTTP API with socket connection.
 - [ ] Implement a working Example
-- [ ] Publish to NPM
 - [ ] Security Concerns
 
 
