@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var routes = require('./routes.js')
 var routerService = require('./Services/RouterService.js')
 var sessionService = require('./Services/SessionService.js')

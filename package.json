@@ -37,5 +37,8 @@
   },
   "devDependencies": {
     "supertest": "^3.0.0"
+  },
+  "bin": {
+    "unixremote": "./src/server.js"
   }
 }

@@ -30,26 +30,32 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 ## Installation :
 
 ```
- $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-RemoteControl
- $ npm install
+ $ npm install -g unix-remotecontrol
 ```
 
 ### Starting Server :
 
 ```
-$ npm start
+ $ unixremote
 ```
 
 ### Running Forever
 
 ```
  $ npm install -g forever
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-remoteControl
  $ forever start src/server.js
 ```
 
 ## Configuration :
 
 Configuration containing sudo password, port number, logLevel & sessionToken are stored in `environment.js` in root/src.
+
+To Open Configuration for global module : 
+
+```
+ $ unixremote --config
+```
 
 Sample Configuration :
 
@@ -222,6 +228,15 @@ Usage:-
 
 
 ## Writing Custom Scripts :
+
+Cloning the Repo : 
+
+```
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-remoteControl
+ $ node src/server.js
+ or
+ $ npm start
+```
 
 Creating Your Router :
 
