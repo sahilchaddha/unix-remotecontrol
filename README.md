@@ -240,6 +240,8 @@ Usage:-
 ### Todo Scripts :
 - [ ] Screen Live Recording
 - [ ] WebCam Live Recording
+- [ ] Remote System Backup
+- [ ] Remote System Format (Need extra OSX Device to test. :P )
 
 
 ## Writing Custom Scripts :
