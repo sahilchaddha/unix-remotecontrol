@@ -194,6 +194,7 @@ Usage:-
 | /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
 | /off      | POST | Turn off Bluetooth (OS X Only)       | None       | false |
 | /showPairingAlert      | POST | Show pairing alert or pair with any BLE enabled device (OS X Only)     |  `deviceName`: Bluetooth name of device with percentage encoding       | false |
+| /toggle        | POST | Toggle device bluetooth connection (OS X Only)     |  `deviceName`: Bluetooth name of device with percentage encoding       | false |
 
 **NOTE**: [blueutil](https://github.com/imsrc21/blueutil) is added as a depedancy for Bluetooth Connections. It will be automatically installed during `npm install`. Its added as postInstall Script in `package.json`. If for some reason installation of blueutil fails, you can manually install blueutil `brew install blueutil`
 
