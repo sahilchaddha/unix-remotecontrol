@@ -4,11 +4,14 @@
 
 
 [![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
-
 [![npm](https://img.shields.io/npm/dm/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
-
-
 [![npm](https://img.shields.io/npm/v/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
+[![GitHub release](https://img.shields.io/github/release/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+[![GitHub issues](https://img.shields.io/github/issues/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+
+
+
 
 
 
