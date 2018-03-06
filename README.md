@@ -1,4 +1,4 @@
-# Unix Remote Control (IoT) 
+# Unix Remote Control (IOT) 
 
 [![NPM](https://nodei.co/npm/unix-remotecontrol.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/unix-remotecontrol/)
 
