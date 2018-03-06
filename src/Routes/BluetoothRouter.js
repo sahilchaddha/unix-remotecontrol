@@ -47,19 +47,19 @@ router.post('/showPairingAlert', function (req, res) {
   })
 })
 
-router.post('/toogle', function (req, res) {
+router.post('/toggle', function (req, res) {
   req.on('data', function(data) {
     var obj = JSON.parse(data.toString());
     
     if ( obj.hasOwnProperty("deviceName") ) {
-      commandService.execute('bluetooth', 'toogle', [obj["deviceName"]], function(data, error, stdErr) {
+      commandService.execute('bluetooth', 'toggle', [obj["deviceName"]], function(data, error, stdErr) {
           if (error) {
             res.status(404).send({responseMessage: "If failed than please check following scenarios:\
               - Please check bluetooth is enabled or not\
               - Please device is paired or not.\
               - If Paired please check device is discovarable or not" })
           } else {
-            res.status(200).send({responseMessage: "Connection toogled successfully." })
+            res.status(200).send({responseMessage: "Connection toggled successfully." })
           }
       })
     } else {

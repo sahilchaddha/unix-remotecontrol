@@ -133,8 +133,8 @@ var bluetoothCommands = {
         command : ['swift src/Commands/SwiftScripts/showPairing.swift'],
         sudo: false        
     },   
-    toogle : {
-        command : ['swift src/Commands/SwiftScripts/toogleBluetooth.swift'],
+    toggle : {
+        command : ['swift src/Commands/SwiftScripts/toggleBluetooth.swift'],
         sudo: false        
     }   
 }
