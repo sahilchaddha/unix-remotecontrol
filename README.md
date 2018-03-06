@@ -1,4 +1,19 @@
-# Unix Remote Control (IoT) [![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
+# Unix Remote Control (IOT) 
+
+[![NPM](https://nodei.co/npm/unix-remotecontrol.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/unix-remotecontrol/)
+
+
+[![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
+[![npm](https://img.shields.io/npm/dm/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
+[![npm](https://img.shields.io/npm/v/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
+[![GitHub release](https://img.shields.io/github/release/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+[![GitHub issues](https://img.shields.io/github/issues/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/sahilchaddha/unix-remotecontrol.svg)](https://github.com/sahilchaddha/unix-remotecontrol)
+
+
+
+
+
 
 Runs Scripts on Mac/Linux remotely.
 
@@ -23,33 +38,38 @@ The plugin queries the system using HTTP API and run shell scripts. The shell re
 - [ ] Refactor With Promises
 - [ ] Replace HTTP API with socket connection.
 - [ ] Implement a working Example
-- [ ] Publish to NPM
 - [ ] Security Concerns
 
 
 ## Installation :
 
 ```
- $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-RemoteControl
- $ npm install
+ $ npm install -g unix-remotecontrol
 ```
 
 ### Starting Server :
 
 ```
-$ npm start
+ $ unixremote
 ```
 
 ### Running Forever
 
 ```
  $ npm install -g forever
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-remoteControl
  $ forever start src/server.js
 ```
 
 ## Configuration :
 
 Configuration containing sudo password, port number, logLevel & sessionToken are stored in `environment.js` in root/src.
+
+To Open Configuration for global module : 
+
+```
+ $ unixremote --config
+```
 
 Sample Configuration :
 
@@ -224,6 +244,15 @@ Usage:-
 
 
 ## Writing Custom Scripts :
+
+Cloning the Repo : 
+
+```
+ $ git clone https://github.com/sahilchaddha/unix-remoteControl.git && cd unix-remoteControl
+ $ node src/server.js
+ or
+ $ npm start
+```
 
 Creating Your Router :
 
