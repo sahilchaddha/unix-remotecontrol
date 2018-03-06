@@ -10,7 +10,9 @@ var logger = require('./Utilities/logger.js')
 
 if (process.argv[2] == "--config") {
     logger.log("Opening Config ...")
-    commandService.execute('application', 'config', null, function() {
+    var configLocation = __dirname + "/environment.js"
+    logger.log("Configuration File Location : " + configLocation)
+    commandService.execute('application', 'open', [configLocation], function() {
         process.exit()
     })
     return

@@ -25,9 +25,11 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
         logger.info("Command Not Found : " + commandType + " : " + commandKey)
         return
     }
+
+    var commandToExecute = executableCommand.command.concat(params)
  
     logger.debug('*********\nExecuting Command\nSudo: '+executableCommand.sudo + ' \nCommand Type : ' + commandType
-     + '\nCommand Key : ' + commandKey + '\nCommand : ' + executableCommand.command + '\n*********')
+     + '\nCommand Key : ' + commandKey + '\nCommand : ' + commandToExecute + '\n*********')
 
     if (params == null) {
         params = []
@@ -55,8 +57,6 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
             callback(processResult(stdOut), error, stdErr)
         }
     }
-
-    var commandToExecute = executableCommand.command.concat(params)
 
     if (executableCommand.sudo) {
         sudo.exec(commandToExecute, function(err, pid, result) {
