@@ -136,8 +136,11 @@ var bluetoothCommands = {
     showPairingAlert : {
         command : ['swift src/Commands/SwiftScripts/showPairing.swift'],
         sudo: false        
+    },   
+    toogle : {
+        command : ['swift src/Commands/SwiftScripts/toogleBluetooth.swift'],
+        sudo: false        
     }   
-
 }
 
 module.exports = {
