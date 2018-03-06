@@ -52,6 +52,10 @@ var wifiCommands = {
     status : {
         command : ['ifconfig', 'en0'],
         sudo: false
+    },
+    connect : {
+        command : ['networksetup', '-setairportnetwork en0'],
+        sudo: false
     }
 }
 
