@@ -132,7 +132,12 @@ var bluetoothCommands = {
     status : {
         command : ['defaults read /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState'],
         sudo: false
+    },
+    showPairingAlert : {
+        command : ['swift src/Commands/SwiftScripts/showPairing.swift'],
+        sudo: false        
     }   
+
 }
 
 module.exports = {
