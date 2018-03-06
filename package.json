@@ -1,6 +1,7 @@
 {
   "name": "unix-remotecontrol",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "preferGlobal": "true",
   "description": "",
   "main": "src/server.js",
   "scripts": {

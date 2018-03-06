@@ -1,4 +1,16 @@
-# Unix Remote Control (IoT) [![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
+# Unix Remote Control (IoT) 
+
+[![NPM](https://nodei.co/npm/unix-remotecontrol.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/unix-remotecontrol/)
+
+
+[![Build Status](https://travis-ci.org/sahilchaddha/unix-remotecontrol.svg?branch=master)](https://travis-ci.org/sahilchaddha/unix-remotecontrol)
+
+[![npm](https://img.shields.io/npm/dm/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
+
+
+[![npm](https://img.shields.io/npm/v/unix-remotecontrol.svg)](https://www.npmjs.com/package/unix-remotecontrol)
+
+
 
 Runs Scripts on Mac/Linux remotely.
 
