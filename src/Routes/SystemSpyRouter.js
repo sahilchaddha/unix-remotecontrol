@@ -31,6 +31,11 @@ router.post('/screenshot', function (req, res) {
 router.post('/webcamCapture', function (req, res) {
     var imageFilePath = homeDir + '/' + screenShotDirectory + '/' + Date.now().toString() + '.jpg'
     var retryCount = 0
+
+    if (!fs.existsSync(imagesDirectory)){
+        fs.mkdirSync(imagesDirectory);
+    }
+
     var getCameraImage = function() {
         retryCount++
         imagesnapjs.capture(imageFilePath, { cliflags: '-w 2'}, function(err) {
@@ -56,8 +61,8 @@ router.post('/webcamCapture', function (req, res) {
 
 router.post('/alert', function (req, res) {
     var options = []
-    if (req.query.message != null) {
-      options.push(""+req.query.message)
+    if (req.body.message != null) {
+      options.push(""+req.body.message)
     } else {
       options.push('Alert')
     }
@@ -69,14 +74,14 @@ router.post('/alert', function (req, res) {
 
 router.post('/notify', function (req, res) {
     var options = []
-    if (req.query.message != null) {
-      options.push(""+req.query.message)
+    if (req.body.message != null) {
+      options.push(""+req.body.message)
     } else {
       options.push('Alert')
     }
 
-    if (req.query.title != null) {
-        options.push(""+req.query.title)
+    if (req.body.title != null) {
+        options.push(""+req.body.title)
       } else {
         options.push('Notification')
       }

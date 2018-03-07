@@ -103,20 +103,27 @@ module.exports = env
 
 After Running the server, You can request
 
-`localhost:portNumber/commandType/command?queryParams`
+`localhost:portNumber/commandType/command`
 
 e.g.
 
 
-`localhost:3000/power/shutdown?time=10`
+
+```
+POST localhost:3000/power/shutdown
+    {
+        "time": 10
+    }
+
+```
 
 
 ```
-curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" localhost:3000/power/logout
+curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" -X POST localhost:3000/power/logout
 
-curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" localhost:3000/power/restart?time=10
+curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" "Content-Type: application/json" -X POST -d '{"time":10}' localhost:3000/power/restart 
 
-curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" localhost:3000/music/syncSpotify?destination=AppleMusic
+curl --header "token: f64f2940-fae4-11e7-8c5f-ef356f27913" "Content-Type: application/json" -X POST -d '{"destination":"AppleMusic"}' localhost:3000/music/syncSpotify
 ```
 
 ## Sample Scripts/Commands : 
@@ -127,9 +134,15 @@ Usage:-
 
 `localhost:3000/power/displaySleep`
 
-`localhost:3000/power/restart?time=10`
+```
+POST localhost:3000/power/restart
+    {
+        "time": 10
+    }
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+```
+
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /ping      | GET | Pings to get server state (on/off)         | None       | false |
 | /halt           | POST | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
@@ -148,7 +161,7 @@ Usage:-
 
 `localhost:3000/systemStats/ram`
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /temperature      | GET | Returns current Temperature of CPU         | None       | false |
 | /cpuLoad           | GET | Returns current CPU Load                          | None      | false |
@@ -162,7 +175,7 @@ Usage:-
 
 `localhost:3000/browser/googleChromeReset `
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /googleChromeReset      | POST | Clear all data of google chrome and reset         | None       | false |
 | /safariClearHistory      | POST | Clear histroy of safari        | None       | false |
@@ -175,7 +188,7 @@ Usage:-
 
 `localhost:3000/wifi/on `
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /status      | GET | Returns Wifi Enabled/Disabled Status (OS X Only)       | None       | false |
 | /on      | POST | Turn on wifi (OS X Only)        | None       | false |
@@ -188,7 +201,7 @@ Usage:-
 
 `localhost:3000/bluetooth/status `
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /status      | GET | Returns Bluetooth Enabled/Disabled Status (OS X Only)       | None       | false |
 | /on      | POST | Turn on Bluetooth (OS X Only)        | None       | false |
@@ -205,11 +218,22 @@ Usage:-
 
 `localhost:3000/systemSpy/camRecord`
 
-`localhost:3000/systemSpy/alert?message="Heeeyyy !!! Hooooo !!!"`
+```
+localhost:3000/systemSpy/alert
+    {
+        "message": "Heeeyyy !!! Hooooo !!!"
+    }
+```
 
-`localhost:3000/systemSpy/notify?title="heyyy"&message="hooo"`
+```
+localhost:3000/systemSpy/notify
+    {
+        "title": "heyyy",
+        "message": "hooo"
+    }
+```
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /screenshot      | POST | Screenshots Current Screen, Saves & returns image (OSX Only)         | None       | false |
 | /webcamCapture      | POST | Clicks Camera Still, Saves & returns image (OSX Only)         | None       | false |
@@ -225,9 +249,14 @@ Usage:-
 
 `localhost:3000/music/itunesPlaylist`
 
-`localhost:3000/music/setVolume?volume=10`
+```
+localhost:3000/music/setVolume
+    {
+        "volume": 10
+    }
+```
 
-| Command             | Method | Description                                           | Query Params | Sudo |
+| Command             | Method | Description                                           | Params | Sudo |
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /youtubePlaylist      | POST | Opens Youtube & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |
 | /itunesPlaylist      | POST | Opens iTunes & Starts Playing Playlist defined in `environment.js` (OSX Only)         | None       | false |

@@ -37,14 +37,14 @@ router.post('/itunesPlaylist', function (req, res) {
 
 router.post('/setVolume', function (req, res) {
    var options = []
-   if (req.query.volume != null) {
-        options.push(req.query.volume)
+   if (req.body.volume != null) {
+        options.push(req.body.volume)
    } else {
-        res.status(400).send({responseMessage: "Volume Query Parameter Missing"})
+        res.status(400).send({responseMessage: "Volume Parameter Missing"})
         return
     }
     commandService.execute('music', 'setVolume', options, function() {
-        res.status(200).send({responseMessage: "Volume Changed to " + req.query.volume})
+        res.status(200).send({responseMessage: "Volume Changed to " + req.body.volume})
     })
 })
 

@@ -22,6 +22,8 @@ RouterService.prototype.initSessionManager = function(app) {
         // Continue Routing
         next()
       })
+      app.use(express.json());       // to support JSON-encoded bodies
+      app.use(express.urlencoded());
 }
 //Public Method
 RouterService.prototype.addRoutes = function(app, routes) {

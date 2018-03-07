@@ -59,8 +59,8 @@ CommandService.prototype.execute = function(commandType, commandKey, params, cal
     }
 
     if (executableCommand.sudo) {
-        sudo.exec(commandToExecute, function(err, pid, result) {
-            callCallback(error, stdOut, stdErr)
+        sudo.exec(commandToExecute, function(error, pid, result) {
+            callCallback(error, result, null)
         });
     } else {
         //Run Shell without sudo

@@ -16,23 +16,19 @@ router.post('/off', function (req, res) {
 })
 
 router.post('/connect', function (req, res) {
-    req.on('data', function(data) {
-      var obj = JSON.parse(data.toString());
-      
-      if ( obj.hasOwnProperty("name") && obj.hasOwnProperty("password") ) {
-        commandService.execute('wifi', 'connect', [obj["name"], obj["password"]], function(data, error, stdErr) {
-          var responseMessage = "Wifi Connected Successfully" 
+  if (req.body.name != null && req.body.password != null) {
+    commandService.execute('wifi', 'connect', [req.body.name, req.body.password], function(data, error, stdErr) {
+      var responseMessage = "Wifi Connected Successfully" 
 
-          if (data[0]) {
-            responseMessage = data[0]
-          }
-
-          res.status(200).send({responseMessage: responseMessage})
-        })
-      } else {
-        res.status(400).send({responseMessage: "Please provide valid wifi data"})
+      if (data[0]) {
+        responseMessage = data[0]
       }
-  })
+
+      res.status(200).send({responseMessage: responseMessage})
+    })
+  } else {
+    res.status(400).send({responseMessage: "Please provide valid wifi data"})
+  }
 })
 
 router.get('/status', function (req, res) {

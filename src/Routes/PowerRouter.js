@@ -8,8 +8,8 @@ router.get('/', function (req, res) {
 
 router.post('/shutdown', function (req, res) {
   var options = []
-  if (req.query.time != null) {
-    options.push('+'+req.query.time)
+  if (req.body.time != null) {
+    options.push('+'+req.body.time)
   } else {
     options.push('now')
   }
@@ -20,8 +20,8 @@ router.post('/shutdown', function (req, res) {
 
 router.post('/restart', function (req, res) {
   var options = []
-  if (req.query.time != null) {
-    options.push('+'+req.query.time)
+  if (req.body.time != null) {
+    options.push('+'+req.body.time)
   } else {
     options.push('now')
   }
