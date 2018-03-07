@@ -114,7 +114,6 @@ POST localhost:3000/power/shutdown
     {
         "time": 10
     }
-
 ```
 
 
@@ -139,7 +138,6 @@ POST localhost:3000/power/restart
     {
         "time": 10
     }
-
 ```
 
 | Command             | Method | Description                                           | Params | Sudo |
