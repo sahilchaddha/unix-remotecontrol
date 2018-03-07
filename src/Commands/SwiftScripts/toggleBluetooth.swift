@@ -24,25 +24,53 @@ class BluetoothDeviceInquiryDelegate : IOBluetoothDeviceInquiryDelegate {
         
         if deviceName.range(of:defaultBluetoothDeviceName) != nil {
             
-            let device : IOBluetoothDevice = IOBluetoothDevice(addressString: addressString)
-            let pair : IOBluetoothDevicePair = IOBluetoothDevicePair.init(device: device)
-            pair.replyUserConfirmation(true)
-            let deviceReturn : IOReturn = pair.start()
-            
-            if deviceReturn == kIOReturnSuccess {
-                print("Pairing alert presented successfully.")
-                exit(0)
-            } else {
-                print("Please try again.")
-                exit(-2)
-            }
+            let device : IOBluetoothDevice = IOBluetoothDevice(addressString: addressString)            
+            toogleConnection(device: device)
         }
     }
     
     func deviceInquiryComplete(_ sender: IOBluetoothDeviceInquiry!, error: IOReturn, aborted: Bool) {
         print("No deviced found matching name : " + defaultBluetoothDeviceName)
+
+        if IOBluetoothDevice.pairedDevices().count == 0 {
+            print("No Paired Devices")
+        } else {
+            IOBluetoothDevice.pairedDevices().forEach({(device) in
+                guard let device = device as? IOBluetoothDevice,
+                    let addressString = device.addressString,
+                    let deviceName = device.name
+                    else {
+                        return
+                }
+                
+                if deviceName.range(of:defaultBluetoothDeviceName) != nil {
+                    let device : IOBluetoothDevice = IOBluetoothDevice(addressString: addressString)
+                    toogleConnection(device: device)
+                }
+                print("\(deviceName) => \(addressString)")
+            })
+        }
+        
         exit(-3)
     }
+}
+
+func toogleConnection(device: IOBluetoothDevice) {
+    if !device.isPaired() {
+        print("Not paired to device")
+        exit(-2)
+    }
+    
+    if device.isConnected() {
+        print("closed connection")
+        device.closeConnection()
+    }
+    else {
+        print("opened connection")
+        device.openConnection()
+    }
+    
+    exit(0)
 }
 
 let bluetoothDeviceInquiryDelegate = BluetoothDeviceInquiryDelegate()
@@ -53,7 +81,7 @@ if (CommandLine.arguments.count == 2 || !defaultBluetoothDeviceName.isEmpty) {
     if defaultBluetoothDeviceName.isEmpty {
         defaultBluetoothDeviceName = CommandLine.arguments[1].removingPercentEncoding!
     }
-    
+
     ibdi?.updateNewDeviceNames = true
     let ibdiStart = ibdi?.start()
 
@@ -68,5 +96,4 @@ else {
 }
 
 RunLoop.current.run()
-
 

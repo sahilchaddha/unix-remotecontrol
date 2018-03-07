@@ -43,4 +43,21 @@ router.post('/showPairingAlert', function (req, res) {
   }
 })
 
+router.post('/toggle', function (req, res) {
+  if (req.body.deviceName != null) {
+      commandService.execute('bluetooth', 'toggle', [req.body.deviceName], function(data, error, stdErr) {
+        if (error) {
+          res.status(404).send({responseMessage: "If failed than please check following scenarios:\
+            - Please check bluetooth is enabled or not\
+            - Please device is paired or not.\
+            - If Paired please check device is discovarable or not" })
+        } else {
+          res.status(200).send({responseMessage: "Connection toggled successfully." })
+        }
+    })
+  } else {
+    res.status(400).send({responseMessage: "Please provide valid bluetooth device name"})
+  }
+})
+
 module.exports = router
