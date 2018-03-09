@@ -156,8 +156,8 @@ POST localhost:3000/power/restart
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /ping      | GET | Pings to get server state (on/off)         | None       | false |
 | /halt           | POST | Shutdowns immediately & forcibly (Can cause data loss)                          | None      | true |
-| /shutdown              | POST | Shut downs the system                                 | `time` : Delays Shutdown in minutes       | true |
-| /restart           | POST | Restarts the system | `time` : Delays Shutdown in minutes      | true |
+| /shutdown              | POST | Shut downs the system                                 | `time` (minutes) : Delays Shutdown in minutes       | true |
+| /restart           | POST | Restarts the system | `time` (minutes) : Delays Shutdown in minutes      | true |
 | /logout         | POST | Logs Out the user (OSX Only)                                  | None      | false |
 | /sleep         | POST | Turns the System to Sleep                       | None       | false |
 | /displaySleep        | POST | Turns the Display to Sleep                      | None       | false |
@@ -248,8 +248,8 @@ localhost:3000/systemSpy/notify
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /screenshot      | POST | Screenshots Current Screen, Saves & returns image (OSX Only)         | None       | false |
 | /webcamCapture      | POST | Clicks Camera Still, Saves & returns image (OSX Only)         | None       | false |
-| /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | None      | false |
-| /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | None       | false |
+| /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | `time` (In Minutes): Start recording for specific time.  Here time is optional if you want to run this command forever than do not pass any arguments      | false |
+| /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | `time` (In Minutes): Start recording for specific time.  Here time is optional if you want to run this command forever than do not pass any arguments       | false |
 | /alert           | POST | Shows Alert to User | `message`: Message to Show Alert      | false |
 | /notify           | POST | Shows Notification to User | `title`: Title For Notification, `message`: Message      | false |
 | /isRecording         | GET | Returns Recording Status (OSX Only)                                  | `type` : `screen` or `cam` type of recording      | false |
@@ -279,8 +279,6 @@ localhost:3000/music/setVolume
 
 
 ### Todo Scripts :
-- [ ] Screen Live Recording
-- [ ] WebCam Live Recording
 - [ ] Remote System Backup
 - [ ] Remote System Format (Need extra OSX Device to test. :P )
 
@@ -413,3 +411,9 @@ $ unixremote
 Sahil Chaddha (mail@sahilchaddha.com)
 
 Sumit Chudasama (imsrc21@gmail.com)
+
+## Reference :
+
+- [HashinKit](https://github.com/shogo4405/HaishinKit.swift)
+
+- [BlueUtil](https://github.com/toy/blueutil)
