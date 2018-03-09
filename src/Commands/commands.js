@@ -79,6 +79,9 @@ var spyCommands = {
     notify: {
         command: ['osascript', 'src/Commands/AppleScripts/notify.scpt'],
         sudo: false
+    },
+    camRecord : {
+        command: ['./src/Commands/SwiftScripts/Recorder/CamRecorder/Recorder start']
     }
 }
 

