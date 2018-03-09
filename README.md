@@ -25,6 +25,12 @@ I use this to play itunes, search google and bookmark search results, restart my
 
 Homebridge Plugin => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
 
+## How it Works :
+
+This library is directly injected into homebridge with a plugin wrapper => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
+
+The plugin queries the system using HTTP API and run shell scripts. The shell requires sudo access to shutdown/reboot the system. More commands can be easily be injected. Feel free to PR.
+
 You can ask Siri to execute commands : 
 
 `Hey Siri, Shutdown my laptop`
@@ -36,12 +42,6 @@ You can ask Siri to execute commands :
 `Hey Siri, Capture Laptop Webcam`
 
 `Hey Siri, Who's using my laptop`
-
-## How it Works :
-
-This library is directly injected into homebridge with a plugin wrapper => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
-
-The plugin queries the system using HTTP API and run shell scripts. The shell requires sudo access to shutdown/reboot the system. More commands can be easily be injected. Feel free to PR.
 
 ## Todo :
 
