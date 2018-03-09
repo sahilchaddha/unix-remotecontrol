@@ -19,23 +19,11 @@ Runs Scripts on Mac/Linux remotely.
 
 ## Why :
 
-I was setting up homebridge (iOS HomeKit Accesory Protocol) on my rasberryPi and after hooking up my IR Blaster, RF Transmitter and other wake-on-lan devices. I wanted my always-on OSX Laptop to also be remotely controlled by my iOS Device. So i ended up writing up a small plugin for [Homebridge](https://github.com/nfarina/homebridge) [plugin](https://github.com/sahilchaddha/homebridge-unixcontrol). 
+I was setting up homebridge (iOS HomeKit Accesory Protocol) on my rasberryPi and after hooking up my IR Blaster, RF Transmitter and other wake-on-lan devices. I wanted my always-on OSX to also be remotely controlled by my iOS Device. So i ended up writing up a small plugin for [Homebridge](https://github.com/nfarina/homebridge) [plugin](https://github.com/sahilchaddha/homebridge-unixcontrol). 
 
 I use this to play itunes, search google and bookmark search results, restart my system, get room temperature using MBP in-build Temp Sensor and adjust airconditioning accordingly, monitor my ec-2 instance stats, sync Spotify Playlist etc.
 
 Homebridge Plugin => [homebridge-unixcontrol](https://github.com/sahilchaddha/homebridge-unixcontrol)
-
-You can ask Siri to execute commands : 
-
-`Hey Siri, Shutdown my laptop`
-
-`Hey Siri, play iTunes Playlist`
-
-`Hey Siri, Good Morning ! // Plays Music, Backups OSX, Search for Google Alerts, Turns Off Air Conditioner`
-
-`Hey Siri, Capture Laptop Webcam`
-
-`Hey Siri, Who's using my laptop`
 
 ## How it Works :
 
@@ -248,7 +236,7 @@ localhost:3000/systemSpy/notify
 |--------------------|---------|-------------------------------------------------------|----------| ----- |
 | /screenshot      | POST | Screenshots Current Screen, Saves & returns image (OSX Only)         | None       | false |
 | /webcamCapture      | POST | Clicks Camera Still, Saves & returns image (OSX Only)         | None       | false |
-| /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | None      | false |
+| /screenRecord           | POST | Starts Screen Recording (OSX Only)                          | ```time```(In Minutes): Start recording for specific time.  Here time is optional if you want to run this command forever than do not pass any arguments      | false |
 | /camRecord               | POST | Starts Camera Recording (OSX Only)                                 | ```time```(In Minutes): Start recording for specific time.  Here time is optional if you want to run this command forever than do not pass any arguments      | false |
 | /alert           | POST | Shows Alert to User | `message`: Message to Show Alert      | false |
 | /notify           | POST | Shows Notification to User | `title`: Title For Notification, `message`: Message      | false |
@@ -393,7 +381,6 @@ WIP
 ### On Pi : 
 
 ```
-$ ssh pi@192.168.1.2 // Your Pi Local Address
 $ npm install -g homebridge
 $ npm install -g homebridge-unixcontrol
 

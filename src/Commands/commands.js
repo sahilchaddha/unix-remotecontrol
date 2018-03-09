@@ -81,7 +81,12 @@ var spyCommands = {
         sudo: false
     },
     camRecord : {
-        command: ['./src/Commands/SwiftScripts/Recorder/CamRecorder/Recorder start']
+        command: ['./src/Commands/SwiftScripts/Recorder/CamRecorder/Recorder start'],
+        sudo: false
+    },
+    screenRecord : {
+        command: ['./src/Commands/SwiftScripts/Recorder/ScreenRecorder/Recorder start'],
+        sudo: false
     }
 }
 
