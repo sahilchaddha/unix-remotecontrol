@@ -29,9 +29,7 @@ router.get('/status', function (req, res) {
 
 router.post('/showPairingAlert', function (req, res) {
   if (req.body.deviceName != null) {
-      commandService.execute('bluetooth', 'showPairingAlert', [req.body.deviceName], function(data, error, stdErr) {
-        var responseMessage = "Pairing alert presented successfully." 
-
+      commandService.execute('bluetooth', 'showPairingAlert', [req.body.deviceName], function(data, error) {
         if (error) {
           res.status(404).send({responseMessage: "No devices found." })
         } else {
@@ -45,7 +43,7 @@ router.post('/showPairingAlert', function (req, res) {
 
 router.post('/toggle', function (req, res) {
   if (req.body.deviceName != null) {
-      commandService.execute('bluetooth', 'toggle', [req.body.deviceName], function(data, error, stdErr) {
+      commandService.execute('bluetooth', 'toggle', [req.body.deviceName], function(data, error) {
         if (error) {
           res.status(404).send({responseMessage: "If failed than please check following scenarios:\
             - Please check bluetooth is enabled or not\
