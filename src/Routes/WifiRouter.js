@@ -17,7 +17,7 @@ router.post('/off', function (req, res) {
 
 router.post('/connect', function (req, res) {
   if (req.body.name != null && req.body.password != null) {
-    commandService.execute('wifi', 'connect', [req.body.name, req.body.password], function(data, error) {
+    commandService.execute('wifi', 'connect', [req.body.name, req.body.password], function(data) {
       var responseMessage = "Wifi Connected Successfully" 
 
       if (data[0]) {
