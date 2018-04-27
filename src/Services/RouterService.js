@@ -9,13 +9,13 @@ RouterService.prototype.initSessionManager = function(app) {
     app.use(function authenticateSessionToken (req, res, next) { 
         
         if (req.headers['token'] == null) {
-            res.status(400).send({responseMessage: "Authentication Failed: token Header Required.", errorCode: 00})
+            res.status(400).send({responseMessage: "Authentication Failed: token Header Required.", errorCode: 403})
             return
         }
 
         if (!sessionService.authenticate(req.headers['token'])) {
             // Authentication Failed
-            res.status(400).send({responseMessage: "Error: Authentication Failed", errorCode: 01})
+            res.status(400).send({responseMessage: "Error: Authentication Failed", errorCode: 401})
             return
         }
 

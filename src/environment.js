@@ -1,8 +1,8 @@
 var env = {
     port: '3000',
-    pass: 'lol',
+    pass: 'uncharted',
     logLevel: 'info',
-    sessionToken: 'f64f2940-fae4-11e7-8c5f-ef356f279131',
+    sessionToken: 'abcd',
     youtubePlaylistUrl: 'qpgTC9MDx1o&list=RDMMqpgTC9MDx1o',
     itunesPlaylist: 'MyPlaylist'
 }

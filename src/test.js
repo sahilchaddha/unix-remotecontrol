@@ -13,7 +13,7 @@ request(app)
   .get("/power")
   .set('token', 'f64f2940-fae4-11e7-8c5f-ef356f279131')
   .expect(200)
-  .end(function(err, res) {
+  .end(function(err) {
     if (err) {
         throw err;
     } else {
@@ -24,7 +24,7 @@ request(app)
   request(app)
   .get("/power")
   .expect(400)
-  .end(function(err, res) {
+  .end(function(err) {
     if (err) {
         throw err;
     } else {
@@ -39,7 +39,7 @@ request(app)
   .expect(function(res) {
     res.body.responseMessage = 'Pong';
   })
-  .end(function(err, res) {
+  .end(function(err) {
     if (err) {
         throw err;
     } else {

@@ -116,7 +116,7 @@ router.post('/camRecord', function (req, res) {
 })
 
 router.get('/isRecording', function (req, res) {
-    
+    res.status(404).send({responseMessage: "Unimplemented"})
 })
 
 
