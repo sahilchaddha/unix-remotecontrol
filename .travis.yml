@@ -1,12 +1,13 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 sudo: false
 os:
-  - osx
+- osx
 install:
-  - npm install --ignore-scripts
+- npm install --ignore-scripts
 script:
-  - npm test
+- npm test
 notifications:
-  slack: 4iota:P76C6qX8Ko2ev68l9uu4L6v6
+  slack:
+    secure: rSr7PKcWh/RYrUTpytUnV87gZmpU093Qtdry6HJ2o3FyYhm4jdPbiGKbh84VqZT+/4XMWg+x+RTy+KVxbjiB8Pgglh8KVAD1UdFQamOWzCcVtsPBF9VAgEIIi7Hc/ESylc8TOF/2arjTyNkdARMALO9nZ3yI/PqFbNvFrTYFmaKwA3hqKeNO7lzSJAV5761bgjbv0Rj2G/DNytRI3VIL9eDnJXLnLBGno2tAEhNWsDx+P/CqyDw0XikLaBebNUeOerK4GmzANBLwgDFTqICs2zAZs5Llwneb+Zgx3Xo9v0aANAIXHp7agIALMdTg/dD1smZrXau8AiojP3FYz/56746QAtdgTgMN5VYUlV4X/IThQbFDJYl7W9K0bdrVhqMbROQ7BI06cp27T5swH3XxiTtt8KI6B2wLR5AWsfu5ZT1rexpseNDCwbD87TiqhepWONRLL8pXNwiEMhVA8LiqxAyihhCXgQldgG/ylHvq4m1TKcK71aBjJSQyN/Dv/T+1wYKQT7S+u+BB+uHU17mPXDOYC6FnKRXQgWrZDyz2VADNW/n5FJZrSYYjbU3xJ845nJKUr5vXhILAHaHHtnMc9jiKgFZ0Q9jDbHKb8iKh9J6iKIOo3M9SdaUmynFBK3HD208XScNUqfXnUxtsH+Ym4X1c57q7P9wx2ckOrVCIR+o=
